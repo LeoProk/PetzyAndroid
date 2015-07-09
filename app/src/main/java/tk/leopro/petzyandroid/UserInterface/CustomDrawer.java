@@ -17,17 +17,20 @@
 package tk.leopro.petzyandroid.UserInterface;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import tk.leopro.petzyandroid.AppControl;
+import tk.leopro.petzyandroid.AppController;
+import tk.leopro.petzyandroid.Fragments.AdoptionTips;
+import tk.leopro.petzyandroid.Fragments.LostFound;
+import tk.leopro.petzyandroid.Fragments.ParksMap;
+import tk.leopro.petzyandroid.Fragments.PetAdopting;
+import tk.leopro.petzyandroid.Fragments.VetsMap;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.R;
 import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
@@ -58,8 +61,8 @@ final class CustomDrawer implements FactoryInterface {
 
         final AppCompatActivity activity = (AppCompatActivity) mContext;
         //get the arrays from strings
-        /*final String[] menutitles = context.getResources().getStringArray(R.array.titles);
-        final TypedArray menuIcons = context.getResources().obtainTypedArray(R.array.icons);*/
+        final String[] menutitles = mContext.getResources().getStringArray(R.array.titles);
+        /*final TypedArray menuIcons = context.getResources().obtainTypedArray(R.array.icons);*/
         ArrayList<RowItem> rowItems = new ArrayList<>();
         //create the drawer
         ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(activity, mDrawerLayout,
@@ -76,14 +79,14 @@ final class CustomDrawer implements FactoryInterface {
                 super.onDrawerOpened(drawerView);
                 activity.invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
-        };/*
+        };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         for (int i = 0; i < menutitles.length; i++) {
-            RowItem items = new RowItem(menutitles[i], menuIcons.getResourceId(i, -1));
+            RowItem items = new RowItem(menutitles[i], i);
             rowItems.add(items);
 
         }
-        menuIcons.recycle();*/
+//        menuIcons.recycle();
         CustomAdapter adapter = new CustomAdapter(mContext, rowItems);
         mDrawerList.setAdapter(adapter);
         mDrawerList.setOnItemClickListener(new CustomDrawer.SlideitemListener());
@@ -99,23 +102,28 @@ final class CustomDrawer implements FactoryInterface {
         switch (position) {
             case 0:
                 tag = "adopt";
+                fragment = new PetAdopting();
                 break;
             case 1:
                 tag = "lost";
+                fragment = new LostFound();
                 break;
             case 2:
                 tag = "tips";
+                fragment = new AdoptionTips();
                 break;
             case 3:
                 tag = "parks";
+                fragment = new ParksMap();
                 break;
             case 4:
                 tag = "vets";
+                fragment = new VetsMap();
                 break;
             default:
                 break;
         }
-        AppControl.currentFragment = tag;
+        AppController.currentFragment = tag;
         if(activity.getFragmentManager().findFragmentByTag(tag)==null){
             UtilitiesFactory.addFragment(mContext,fragment,tag,true).doTask();
         }else {

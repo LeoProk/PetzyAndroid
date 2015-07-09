@@ -19,7 +19,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 
-import tk.leopro.petzyandroid.AppControl;
+import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
 /**
@@ -43,7 +43,7 @@ final class FragmentSwitcher implements FactoryInterface {
     public Object doTask() {
         final AppCompatActivity activity = (AppCompatActivity) mContext;
         FragmentTransaction ft = activity.getFragmentManager().beginTransaction();
-            ft.remove(activity.getFragmentManager().findFragmentByTag(AppControl.currentFragment));
+            ft.remove(activity.getFragmentManager().findFragmentByTag(AppController.currentFragment));
             ft.show(activity.getFragmentManager().findFragmentByTag(mNewFragTag)).commit();
 
 

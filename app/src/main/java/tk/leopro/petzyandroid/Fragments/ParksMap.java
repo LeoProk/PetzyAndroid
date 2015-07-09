@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
 
 import tk.leopro.petzyandroid.R;
 
@@ -33,6 +35,8 @@ public class ParksMap extends Fragment {
         mMap = mMapView.getMap();
         mMap.getUiSettings().setMyLocationButtonEnabled(false);
         mMap.setMyLocationEnabled(true);
+        MapsInitializer.initialize(this.getActivity());
+
         return rootView;
     }
     @Override
@@ -50,8 +54,7 @@ public class ParksMap extends Fragment {
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        mMapView
-                .onLowMemory();
+        mMapView.onLowMemory();
     }
 
 }

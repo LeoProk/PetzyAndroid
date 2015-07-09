@@ -10,4 +10,11 @@
     <string name="send">Send</string>
     <string name="lost">Lost</string>
     <string name="found">Found</string>
+    <string-array name="titles">
+        <item>Adopt</item>
+        <item>Lost Found</item>
+        <item>Tips</item>
+        <item>Parks</item>
+        <item>Veterinars</item>
+    </string-array>
 </resources>
