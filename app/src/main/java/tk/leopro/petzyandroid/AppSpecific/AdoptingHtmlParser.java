@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tk.leopro.petzy.AppSpecific;
+package tk.leopro.petzyandroid.AppSpecific;
 
 import android.os.AsyncTask;
 import android.util.Log;

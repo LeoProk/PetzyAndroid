@@ -129,7 +129,7 @@ final class CustomDrawer implements FactoryInterface {
         }else {
             UtilitiesFactory.switchFragments(mContext,tag).doTask();
         }
-
+        mDrawerLayout.closeDrawer(mDrawerList);
     }
 
     // called when one of the items in drawer is clicked

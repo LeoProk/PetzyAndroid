@@ -25,8 +25,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import tk.leopro.petzyandroid.Fragments.NewsFragment;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.UserInterface.UIFactory;
+import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         ListView mDrawerList = (ListView) findViewById(R.id.slider_list);
         FactoryInterface getDrawer = UIFactory.getDrawer(this, mDrawerLayout, mDrawerList);
         mDrawerToggle = (ActionBarDrawerToggle) getDrawer.doTask();
+        //Create news Fragment
+        UtilitiesFactory.addFragment(this,new NewsFragment(),AppController.currentFragment,true).doTask();
     }
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

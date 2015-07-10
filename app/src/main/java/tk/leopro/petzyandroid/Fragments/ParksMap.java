@@ -12,6 +12,7 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 
 import tk.leopro.petzyandroid.R;
+import tk.leopro.petzyandroid.UserInterface.UIFactory;
 
 /**
  * Show the closest  parks near you
@@ -19,24 +20,16 @@ import tk.leopro.petzyandroid.R;
 public class ParksMap extends Fragment {
 
     private MapView mMapView;
-    private GoogleMap mMap;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.parks_fragment, container, false);
-
         // Gets the MapView from the XML layout and creates it
         mMapView = (MapView) rootView.findViewById(R.id.parks_map);
         mMapView.onCreate(savedInstanceState);
-
-        // Gets to GoogleMap from the MapView and does initialization stuff
-        mMap = mMapView.getMap();
-        mMap.getUiSettings().setMyLocationButtonEnabled(false);
-        mMap.setMyLocationEnabled(true);
-        MapsInitializer.initialize(this.getActivity());
-
+        UIFactory.getMap(getActivity(),mMapView).doTask();
         return rootView;
     }
     @Override
