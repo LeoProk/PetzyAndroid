@@ -15,7 +15,9 @@ import tk.leopro.petzyandroid.VolleyApi.LruBitmapCache;
  */
 public class AppController extends Application {
 
-    public static String currentFragment = "news";
+    public static String mCurrentFragment = "news";
+
+    public static String mUserLocation;
 
     public static final String TAG = AppController.class.getSimpleName();
 

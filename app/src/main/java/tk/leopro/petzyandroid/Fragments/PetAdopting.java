@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import tk.leopro.petzyandroid.AppSpecific.AppFactory;
 import tk.leopro.petzyandroid.R;
 
 /**
@@ -19,6 +20,7 @@ public class PetAdopting extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.adopting_fragment, container, false);
+        AppFactory.getHtmlInfo().execute();
         return rootView;
     }
 

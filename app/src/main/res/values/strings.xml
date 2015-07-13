@@ -10,6 +10,11 @@
     <string name="send">Send</string>
     <string name="lost">Lost</string>
     <string name="found">Found</string>
+    <string name="dogs">Dogs</string>
+    <string name="cats">Cats</string>
+    <string name="other">Other</string>
+    <string name="closest">Closest</string>
+    <string name="map">Map</string>
     <string-array name="titles">
         <item>Adopt</item>
         <item>Lost Found</item>

@@ -25,6 +25,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import tk.leopro.petzyandroid.AppSpecific.AppFactory;
 import tk.leopro.petzyandroid.Fragments.NewsFragment;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.UserInterface.UIFactory;
@@ -49,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         FactoryInterface getDrawer = UIFactory.getDrawer(this, mDrawerLayout, mDrawerList);
         mDrawerToggle = (ActionBarDrawerToggle) getDrawer.doTask();
         //Create news Fragment
-        UtilitiesFactory.addFragment(this,new NewsFragment(),AppController.currentFragment,true).doTask();
+        UtilitiesFactory.addFragment(this,new NewsFragment(),AppController.mCurrentFragment,true).doTask();
+
     }
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

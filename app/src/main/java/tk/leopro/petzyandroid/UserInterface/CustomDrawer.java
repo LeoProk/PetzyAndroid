@@ -123,7 +123,7 @@ final class CustomDrawer implements FactoryInterface {
             default:
                 break;
         }
-        AppController.currentFragment = tag;
+        AppController.mCurrentFragment = tag;
         if(activity.getFragmentManager().findFragmentByTag(tag)==null){
             UtilitiesFactory.addFragment(mContext,fragment,tag,true).doTask();
         }else {

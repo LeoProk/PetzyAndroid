@@ -21,26 +21,33 @@ import android.widget.ListView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 /**
  * Get info from html and put in listview
- */
-public class AdoptingHtmlParser extends AsyncTask<ListView,Void,Void> {
+ * */
+final class AdoptingHtmlParser extends AsyncTask<Void,Void,Void> {
 
     @Override
-    protected Void doInBackground(ListView... params) {
-        try {
-            Document docForSave = Jsoup.connect("http://www.yad2.co.il/Pets/Pets.php?AreaID=&PetTypeID=&PetSubTypeID=&PetDealID=2&Age=&Sex=&fromPrice=&untilPrice=&Info=").get();
-            Log.e("yays", docForSave.body().toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    protected Void doInBackground(Void... params) {
+        yadParsing();
         return null;
     }
 
     private void yadParsing(){
+        try {
+            Document doc = Jsoup.connect("http://www.yad2.co.il/Pets/Pets.php?AreaID=&PetTypeID=&PetSubTypeID=&PetDealID=2&Age=&Sex=&fromPrice=&untilPrice=&Info=").get();
+            Elements messages = doc.select("tbody");
 
+            for(Element petInfo : messages){
+
+                Log.e("yays", petInfo.toString());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private void agoraParsing(){
 
