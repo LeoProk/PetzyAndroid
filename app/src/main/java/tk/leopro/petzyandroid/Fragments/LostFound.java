@@ -18,6 +18,7 @@ package tk.leopro.petzyandroid.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,26 @@ public class LostFound extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.lost_found_fragmnet, container, false);
+        TabLayout tabLayout = (TabLayout)rootView.findViewById(R.id.lostfound);
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.lost));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.found));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
         return rootView;
     }
 

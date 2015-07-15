@@ -32,7 +32,7 @@ public class NewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final View rootView = inflater.inflate(R.layout.comment_fragment, container, false);
+        final View rootView = inflater.inflate(R.layout.news_fragment, container, false);
         return rootView;
     }
 }

@@ -36,7 +36,7 @@ public class PetAdopting extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.adopting_fragment, container, false);
-        AppFactory.getHtmlInfo().execute();
+        AppFactory.getHtmlInfo();
         return rootView;
     }
 

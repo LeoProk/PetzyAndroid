@@ -44,7 +44,7 @@ final class CustomToolbar implements FactoryInterface {
         activity.setSupportActionBar(mToolbar);
         ActionBar ab = activity.getSupportActionBar();
         ab.setDisplayShowHomeEnabled(true);
-        ab.setIcon(R.drawable.index);
+        ab.setTitle("Petzy");
         ab.setDisplayUseLogoEnabled(true);
         activity.getSupportActionBar().setDisplayShowTitleEnabled(false);
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);

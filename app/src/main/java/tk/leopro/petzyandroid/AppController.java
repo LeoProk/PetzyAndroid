@@ -11,11 +11,11 @@ import com.android.volley.toolbox.Volley;
 import tk.leopro.petzyandroid.VolleyApi.LruBitmapCache;
 
 /**
- * Created by Leo on 7/4/2015.
+ * Application class have volley rellated methods.
  */
 public class AppController extends Application {
 
-    public static String mCurrentFragment = "news";
+    public static String mFragmentTag = "news";
 
     public static String mUserLocation;
 

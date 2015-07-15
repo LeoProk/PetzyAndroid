@@ -12,6 +12,6 @@ public class AppFactory {
 
     //Parsing info from html
     public static AsyncTask getHtmlInfo(){
-        return new AdoptingHtmlParser();
+        return new AdoptingHtmlParser().execute();
     }
 }
