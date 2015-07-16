@@ -19,11 +19,13 @@ package tk.leopro.petzyandroid.Fragments;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import tk.leopro.petzyandroid.R;
+import tk.leopro.petzyandroid.Utilities.PagerAdapter;
 
 /**
  * This fragment show list of pet available for adopting sorted by time . also it have
@@ -36,27 +38,12 @@ public class LostFound extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.lost_found_fragmnet, container, false);
-        TabLayout tabLayout = (TabLayout)rootView.findViewById(R.id.lostfound);
+        TabLayout tabLayout = (TabLayout)rootView.findViewById(R.id.lostTabs);
         tabLayout.addTab(tabLayout.newTab().setText(R.string.lost));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.found));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        return rootView;
+        ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.lostpager);
+        viewPager.setAdapter(new PagerAdapter(getFragmentManager()));
+        return tabLayout;
     }
 
 

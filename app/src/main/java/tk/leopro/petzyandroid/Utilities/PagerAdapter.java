@@ -5,34 +5,38 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
-import tk.leopro.petzyandroid.AppController;
+import android.util.Log;
 
- /**
+import tk.leopro.petzyandroid.AppController;
+import tk.leopro.petzyandroid.Fragments.LostFound;
+import tk.leopro.petzyandroid.Fragments.VetsMap;
+
+/**
  * Created by Leo on 7/15/2015.
  */
-final class PagerAdapter extends FragmentPagerAdapter {
+public class PagerAdapter extends FragmentPagerAdapter {
 
-    private String mTabTitles[];
-    private Context mContext;
+    /*private Context mContext;
     private String[] mTags;
-    private Fragment[] mFragmentForTabs;
+    private Fragment[] mFragmentForTabs;*/
 
-    public PagerAdapter(FragmentManager fm, Context context ,String[] tabTitles,Fragment[] fragmentsforTabs,String[] tags) {
+    public PagerAdapter(FragmentManager fm) {
         super(fm);
-        mTabTitles = tabTitles;
-        mTags = tags;
-        mFragmentForTabs = fragmentsforTabs;
-        mContext = context;
+        Log.e("WORKS!", "3333333333");
+      /*  mTags = tags;
+        mFragmentForTabs = fragmentsforTabs;*/
+       // mContext = context;
     }
 
     @Override
     public Fragment getItem(int position) {
-        final AppCompatActivity activity = ( AppCompatActivity) mContext;
-        if(activity.getFragmentManager().findFragmentByTag(mTags[position+1])==null){
-            AppController.mFragmentTag = mTags[position+1];
-            UtilitiesFactory.addFragment(mContext,mFragmentForTabs[position+1],mTags[position+1],true).doTask();
-        }else {
-            UtilitiesFactory.switchFragments(mContext,mTags[position+1]).doTask();
+        switch (position){
+            case 0:
+                Log.e("TAB!", "YAAAAAAAAAAAAAA");
+                return new LostFound();
+            case 1:
+                Log.e("TAB2", "YAAAAAAAAAAAAAA");
+                return new VetsMap();
         }
         return null;
     }
@@ -42,9 +46,5 @@ final class PagerAdapter extends FragmentPagerAdapter {
         return 0;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        // Generate title based on item position
-        return mTabTitles[position];
-    }
+
 }

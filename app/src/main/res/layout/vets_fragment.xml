@@ -16,5 +16,8 @@
         android:layout_height="0px"
         android:layout_weight="1"
         android:background="@android:color/white" />
-
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/vets_map"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 </LinearLayout>
