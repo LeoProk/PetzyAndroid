@@ -27,7 +27,7 @@ import android.widget.ListView;
 
 import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.Fragments.AdoptionTips;
-import tk.leopro.petzyandroid.Fragments.LostFound;
+import tk.leopro.petzyandroid.Fragments.Lost;
 import tk.leopro.petzyandroid.Fragments.ParksMap;
 import tk.leopro.petzyandroid.Fragments.PetAdopting;
 import tk.leopro.petzyandroid.Fragments.VetsMap;
@@ -106,7 +106,7 @@ final class CustomDrawer implements FactoryInterface {
                 break;
             case 1:
                 tag = "lost";
-                fragment = new LostFound();
+                fragment = new Lost();
                 break;
             case 2:
                 tag = "tips";

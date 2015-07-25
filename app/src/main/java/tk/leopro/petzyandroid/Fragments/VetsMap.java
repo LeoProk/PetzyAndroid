@@ -38,7 +38,7 @@ public class VetsMap extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final View rootView = inflater.inflate(R.layout.vets_fragment, container, false);
+        final View rootView = inflater.inflate(R.layout.vets_map_fragment, container, false);
         // Gets the MapView from the XML layout and creates it
         mMapView = (MapView) rootView.findViewById(R.id.vets_map);
         mMapView.onCreate(savedInstanceState);

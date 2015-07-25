@@ -1,6 +1,7 @@
 package tk.leopro.petzyandroid;
 
 import android.app.Application;
+import android.support.design.widget.TabLayout;
 import android.text.TextUtils;
 
 import com.android.volley.Request;
@@ -17,7 +18,7 @@ public class AppController extends Application {
 
     public static String mFragmentTag = "news";
 
-    public static String mUserLocation;
+    public static TabLayout mCurrentTabLayout;
 
     public static final String TAG = AppController.class.getSimpleName();
 

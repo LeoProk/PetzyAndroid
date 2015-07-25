@@ -19,32 +19,26 @@ package tk.leopro.petzyandroid.Fragments;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.R;
-import tk.leopro.petzyandroid.Utilities.PagerAdapter;
+import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 
 /**
  * This fragment show list of pet available for adopting sorted by time . also it have
  * option to add pets that you want other to adopt
  */
-public class LostFound extends Fragment {
+public class Lost extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final View rootView = inflater.inflate(R.layout.lost_found_fragmnet, container, false);
-        TabLayout tabLayout = (TabLayout)rootView.findViewById(R.id.lostTabs);
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.lost));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.found));
-        ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.lostpager);
-        viewPager.setAdapter(new PagerAdapter(getFragmentManager()));
-        return tabLayout;
+        final View rootView = inflater.inflate(R.layout.lost_fragmnet, container, false);
+        return rootView;
     }
-
 
 }

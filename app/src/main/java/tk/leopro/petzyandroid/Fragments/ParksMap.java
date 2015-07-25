@@ -18,9 +18,13 @@ package tk.leopro.petzyandroid.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,6 +33,8 @@ import com.google.android.gms.maps.MapsInitializer;
 
 import tk.leopro.petzyandroid.R;
 import tk.leopro.petzyandroid.UserInterface.UIFactory;
+import tk.leopro.petzyandroid.Utilities.PagerAdapter;
+import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 
 /**
  * Show the closest  parks near you

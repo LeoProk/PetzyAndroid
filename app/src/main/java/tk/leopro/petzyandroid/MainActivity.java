@@ -16,8 +16,10 @@
 
 package tk.leopro.petzyandroid;
 
+import android.app.Fragment;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +27,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import tk.leopro.petzyandroid.Fragments.Found;
 import tk.leopro.petzyandroid.Fragments.NewsFragment;
+import tk.leopro.petzyandroid.Fragments.VetsClosest;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.UserInterface.UIFactory;
 import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
@@ -34,6 +38,7 @@ import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 public class MainActivity extends AppCompatActivity {
 
     private ActionBarDrawerToggle mDrawerToggle;
+    private TabLayout mTabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +54,12 @@ public class MainActivity extends AppCompatActivity {
         FactoryInterface getDrawer = UIFactory.getDrawer(this, mDrawerLayout, mDrawerList);
         mDrawerToggle = (ActionBarDrawerToggle) getDrawer.doTask();
         //Create news Fragment
-        UtilitiesFactory.addFragment(this,new NewsFragment(),AppController.mFragmentTag,true).doTask();
+        UtilitiesFactory.addFragment(this, new NewsFragment(), AppController.mFragmentTag, true).doTask();
+        //Create tabs
+        TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
 
     }
+
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -73,5 +81,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void changeTabs(String[] tabNames,String[] tags, Fragment[] fragments) {
+        UtilitiesFactory.createTabs(this,mTabLayout,tabNames,tags,fragments).doTask();
     }
 }
