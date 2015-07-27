@@ -19,6 +19,8 @@ import android.app.Fragment;
 import android.content.Context;
 import android.support.design.widget.TabLayout;
 
+import java.util.ArrayList;
+
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
 /**
@@ -31,8 +33,8 @@ public class UtilitiesFactory {
         return new FragmentSwitcher(context,newFragmentTag);
     }
     //Change the tabs of main tab layout
-    public static FactoryInterface createTabs(Context context,TabLayout tabLayout,String[]tabNames,String[] tags,Fragment[]fragments){
-        return new TabMaker(context,tabLayout,tabNames,tags,fragments);
+    public static FactoryInterface createTabs(Context context,TabLayout tabLayout,String[]tabNames,String[] tags){
+        return new TabMaker(context,tabLayout,tabNames,tags);
     }
     //Check for network status return bool
     public static FactoryInterface checkNetwork(Context context) {

@@ -22,23 +22,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tk.leopro.petzyandroid.AppSpecific.AppFactory;
+import tk.leopro.petzyandroid.MainActivity;
 import tk.leopro.petzyandroid.R;
 
 /**
- * This fragment show list of pet available for adopting sorted by time . also it have
- * option to add pets that you want other to adopt
+ * Show the closest  parks near you
  */
-public class PetAdopting extends Fragment {
+public class ParksClosest extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final View rootView = inflater.inflate(R.layout.adopting_fragment, container, false);
-        AppFactory.getHtmlInfo();
+        final View rootView = inflater.inflate(R.layout.parks_closest_fragment, container, false);
+        final String[] tabName = {getResources().getString(R.string.closest),getResources().getString(R.string.map)};
+        final String[] tabTags = {"parkNear","parkMap"};
+        ((MainActivity) getActivity()).changeTabs(tabName, tabTags);
         return rootView;
     }
-
 
 }

@@ -28,9 +28,10 @@ import android.widget.ListView;
 import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.Fragments.AdoptionTips;
 import tk.leopro.petzyandroid.Fragments.Lost;
+import tk.leopro.petzyandroid.Fragments.ParksClosest;
 import tk.leopro.petzyandroid.Fragments.ParksMap;
-import tk.leopro.petzyandroid.Fragments.PetAdopting;
-import tk.leopro.petzyandroid.Fragments.VetsMap;
+import tk.leopro.petzyandroid.Fragments.DogsAdopting;
+import tk.leopro.petzyandroid.Fragments.VetsClosest;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.R;
 import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
@@ -101,8 +102,8 @@ final class CustomDrawer implements FactoryInterface {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                tag = "adopt";
-                fragment = new PetAdopting();
+                tag = "dog";
+                fragment = new DogsAdopting();
                 break;
             case 1:
                 tag = "lost";
@@ -113,12 +114,12 @@ final class CustomDrawer implements FactoryInterface {
                 fragment = new AdoptionTips();
                 break;
             case 3:
-                tag = "parks";
-                fragment = new ParksMap();
+                tag = "parksNear";
+                fragment = new ParksClosest();
                 break;
             case 4:
-                tag = "vets";
-                fragment = new VetsMap();
+                tag = "vetNear";
+                fragment = new VetsClosest();
                 break;
             default:
                 break;

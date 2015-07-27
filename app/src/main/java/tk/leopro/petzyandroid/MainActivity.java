@@ -27,6 +27,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 import tk.leopro.petzyandroid.Fragments.Found;
 import tk.leopro.petzyandroid.Fragments.NewsFragment;
 import tk.leopro.petzyandroid.Fragments.VetsClosest;
@@ -34,6 +36,10 @@ import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.UserInterface.UIFactory;
 import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 
+/**
+* Main class have navigator drawer and toolbar that it pass to fragment. And method to hide tabs or
+* to change tabs on click and names.
+*/
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         //Create news Fragment
         UtilitiesFactory.addFragment(this, new NewsFragment(), AppController.mFragmentTag, true).doTask();
         //Create tabs
-        TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        mTabLayout = (TabLayout) findViewById(R.id.tabs);
 
     }
 
@@ -83,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeTabs(String[] tabNames,String[] tags, Fragment[] fragments) {
-        UtilitiesFactory.createTabs(this,mTabLayout,tabNames,tags,fragments).doTask();
+    public void changeTabs(String[] tabNames,String[] tags) {
+        UtilitiesFactory.createTabs(this,mTabLayout,tabNames,tags).doTask();
     }
 }
