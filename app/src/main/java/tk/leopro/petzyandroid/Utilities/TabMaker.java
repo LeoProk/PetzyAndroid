@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 
 import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.Fragments.CatsAdopting;
@@ -40,6 +41,7 @@ final class TabMaker implements FactoryInterface {
     public Object doTask() {
         final AppCompatActivity activity = ( AppCompatActivity) mContext;
         mTabLayout.removeAllTabs();
+        mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         for (int i = 0; i < mTabNames.length; i++) {
             mTabLayout.addTab(mTabLayout.newTab().setText(mTabNames[i]));
         }
