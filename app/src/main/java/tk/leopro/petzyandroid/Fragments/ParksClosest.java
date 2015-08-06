@@ -21,7 +21,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import tk.leopro.petzyandroid.AppSpecific.AppFactory;
 import tk.leopro.petzyandroid.MainActivity;
 import tk.leopro.petzyandroid.R;
 
@@ -33,12 +35,18 @@ public class ParksClosest extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         final View rootView = inflater.inflate(R.layout.parks_closest_fragment, container, false);
-        final String[] tabName = {getResources().getString(R.string.closest),getResources().getString(R.string.map)};
-        final String[] tabTags = {"parkNear","parkMap"};
-        ((MainActivity) getActivity()).changeTabs(tabName, tabTags);
+        //create fitting tabs
+        createTabs();
+        final ListView parkList = (ListView)rootView.findViewById(R.id.closeByParks);
+        AppFactory.getParksList().doTask();
         return rootView;
     }
 
+    private void createTabs(){
+        final String[] tabName = {getResources().getString(R.string.closest),getResources().getString(R.string.map)};
+        final String[] tabTags = {"parkNear","parkMap"};
+        ((MainActivity) getActivity()).changeTabs(tabName, tabTags);
+
+    }
 }
