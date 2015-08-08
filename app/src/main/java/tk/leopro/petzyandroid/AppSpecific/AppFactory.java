@@ -2,6 +2,7 @@ package tk.leopro.petzyandroid.AppSpecific;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.ListView;
 
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
@@ -15,7 +16,7 @@ public class AppFactory {
         return new AdoptingHtmlParser().execute();
     }
     //Create list of park with data taken from parse database
-    public static FactoryInterface getParksList(){
-        return new ParksListMaker();
+    public static FactoryInterface getParksList(Context context,ListView listView){
+        return new ParksListMaker(context,listView);
     }
 }

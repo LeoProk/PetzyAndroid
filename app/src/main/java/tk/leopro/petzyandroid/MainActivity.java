@@ -27,6 +27,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.parse.ParseObject;
+
 import java.util.ArrayList;
 
 import tk.leopro.petzyandroid.Fragments.Found;

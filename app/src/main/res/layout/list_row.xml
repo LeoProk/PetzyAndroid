@@ -9,12 +9,12 @@
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/thumbnail"
         android:layout_width="100dp"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_marginRight="8dp" />
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/length"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/thumbnail"
@@ -23,7 +23,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/date"
+        android:layout_below="@id/length"
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/thumbnail"
         android:textStyle="bold" />

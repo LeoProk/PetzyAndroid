@@ -3,6 +3,7 @@
     package="tk.leopro.petzyandroid" >
 
     <application
+        android:name="tk.leopro.petzyandroid.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

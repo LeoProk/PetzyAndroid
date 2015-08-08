@@ -25,13 +25,23 @@ public class AppController extends Application {
 
     private ImageLoader mImageLoader;
 
+    private static AppController mInstance;
+
+
+    // code needed for volly api
+    public static synchronized AppController getInstance() {
+        return mInstance;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "NGE1Ln6TlSWeJ5HVh7dR0wC6azlNIiS1pUZAmV33", "UM7GpKFElo7dCeFWjpSdJoHi32pxjclG4rokbwg9");
+        mInstance = this;
     }
+
+
 
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
