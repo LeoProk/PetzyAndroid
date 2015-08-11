@@ -2,42 +2,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_row_selector"
-    android:padding="8dp" >
+    android:background="@drawable/list_row_selector">
 
 
     <com.android.volley.toolbox.NetworkImageView
+        android:layout_marginTop="20dp"
         android:id="@+id/thumbnail"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="8dp" />
+        android:layout_width="fill_parent"
+        android:layout_height="350dp" />
 
     <TextView
         android:id="@+id/length"
+        android:layout_marginTop="400dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/thumbnail"
-        android:layout_alignParentRight="true"  />
+         />
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/length"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_marginTop="400dp"
+        android:layout_alignParentRight="true"
         android:textStyle="bold" />
-
-
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/thumbnail"  />
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="420dp" />
 
-
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_marginTop="430dp"
+        android:layout_height="30dp"/>
 
 </RelativeLayout>
