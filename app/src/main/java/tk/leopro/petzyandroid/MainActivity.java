@@ -18,15 +18,24 @@ package tk.leopro.petzyandroid;
 
 import android.app.Fragment;
 import android.content.res.Configuration;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.parse.ParseObject;
 
 import java.util.ArrayList;
@@ -43,10 +52,13 @@ import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 * to change tabs on click and names.
 */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements ConnectionCallbacks, OnConnectionFailedListener {
+
 
     private ActionBarDrawerToggle mDrawerToggle;
     private TabLayout mTabLayout;
+    private GoogleApiClient mGoogleApiClient;
+    private Location mLastLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +73,12 @@ public class MainActivity extends AppCompatActivity {
         ListView mDrawerList = (ListView) findViewById(R.id.slider_list);
         FactoryInterface getDrawer = UIFactory.getDrawer(this, mDrawerLayout, mDrawerList);
         mDrawerToggle = (ActionBarDrawerToggle) getDrawer.doTask();
-        //Create news Fragment
-        UtilitiesFactory.addFragment(this, new NewsFragment(), AppController.mFragmentTag, true).doTask();
         //Create tabs
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        //Build google play service and get current location
+        buildGoogleApiClient();
+        //Create news Fragment
+        UtilitiesFactory.addFragment(this, new NewsFragment(), AppController.mFragmentTag, true).doTask();
 
     }
 
@@ -91,7 +105,37 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    protected synchronized void buildGoogleApiClient() {
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
+        mGoogleApiClient.connect();
+    }
+
     public void changeTabs(String[] tabNames,String[] tags) {
         UtilitiesFactory.createTabs(this,mTabLayout,tabNames,tags).doTask();
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+        Log.e("yay","yayyy");
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                mGoogleApiClient);
+        if (mLastLocation != null) {
+            AppController.currentLocation = new Location("Current Location");
+            AppController.currentLocation.setLatitude(mLastLocation.getLatitude());
+            AppController.currentLocation.setLongitude(mLastLocation.getLongitude());
+            //Log.e("my location is:",String.valueOf(mLastLocation.getLatitude())+ " " + String.valueOf(mLastLocation.getLongitude()));
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i){
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
     }
 }

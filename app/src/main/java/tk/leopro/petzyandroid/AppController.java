@@ -1,6 +1,7 @@
 package tk.leopro.petzyandroid;
 
 import android.app.Application;
+import android.location.Location;
 import android.support.design.widget.TabLayout;
 import android.text.TextUtils;
 
@@ -18,6 +19,8 @@ import tk.leopro.petzyandroid.VolleyApi.LruBitmapCache;
 public class AppController extends Application {
 
     public static String mFragmentTag = "news";
+
+    public static Location currentLocation;
 
     public static final String TAG = AppController.class.getSimpleName();
 
