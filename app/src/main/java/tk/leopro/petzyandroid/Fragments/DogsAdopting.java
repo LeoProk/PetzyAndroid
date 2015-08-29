@@ -38,9 +38,6 @@ public class DogsAdopting extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.dogs_fragment, container, false);
         //AppFactory.getHtmlInfo();
-        final String[] tabName = {getResources().getString(R.string.dogs),getResources().getString(R.string.cats),getResources().getString(R.string.other)};
-        final String[] tabTags = {"dog","cat","other"};
-        ((MainActivity) getActivity()).changeTabs(tabName, tabTags);
         return rootView;
     }
 

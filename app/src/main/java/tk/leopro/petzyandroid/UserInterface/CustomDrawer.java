@@ -33,6 +33,7 @@ import tk.leopro.petzyandroid.Fragments.ParksMap;
 import tk.leopro.petzyandroid.Fragments.DogsAdopting;
 import tk.leopro.petzyandroid.Fragments.VetsClosest;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.MainActivity;
 import tk.leopro.petzyandroid.R;
 import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 
@@ -99,15 +100,21 @@ final class CustomDrawer implements FactoryInterface {
         final AppCompatActivity activity = ( AppCompatActivity) mContext;
         //change the fragment tag based on location pressed
         String tag = null;
+        String[] tabName = null;
+        String[] tabTags = null;
         Fragment fragment = null;
         switch (position) {
             case 0:
                 tag = "dog";
                 fragment = new DogsAdopting();
+                tabName = new String[]{mContext.getResources().getString(R.string.dogs),mContext.getResources().getString(R.string.cats),mContext.getResources().getString(R.string.other)};
+                tabTags = new String[] {"dog","cat","other"};
                 break;
             case 1:
                 tag = "lost";
                 fragment = new Lost();
+                tabName = new String[]{mContext.getResources().getString(R.string.lost),mContext.getResources().getString(R.string.found)};
+                tabTags = new String[]{"lost","found"};
                 break;
             case 2:
                 tag = "tips";
@@ -116,14 +123,23 @@ final class CustomDrawer implements FactoryInterface {
             case 3:
                 tag = "parksNear";
                 fragment = new ParksClosest();
+                tabName = new String[]{mContext.getResources().getString(R.string.closest),mContext.getResources().getString(R.string.map)};
+                tabTags = new String[]{"parkNear","parkMap"};
                 break;
             case 4:
                 tag = "vetNear";
                 fragment = new VetsClosest();
+                tabName = new String[]{mContext.getResources().getString(R.string.closest),mContext.getResources().getString(R.string.map)};
+                tabTags = new String[]{"vetNear","vetMap"};
                 break;
             default:
                 break;
         }
+        //Create tabs
+        if(tabName != null) {
+            ((MainActivity) mContext).changeTabs(tabName, tabTags);
+        }
+        //Change to clicked Fragment
         if(activity.getFragmentManager().findFragmentByTag(tag)==null){
             AppController.mFragmentTag = tag;
             UtilitiesFactory.addFragment(mContext,fragment,tag,true).doTask();

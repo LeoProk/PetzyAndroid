@@ -47,18 +47,18 @@ final class ParksListMaker implements FactoryInterface{
                     for (int i = 0; i < myArray.length(); i++) {
                         try {
                             String[] finalParks = myArray.get(i).toString().split("Break:");
-                            Log.e("aya", finalParks[0] + " " + linkStreetView(finalParks[2], finalParks[3]) + " " + finalParks[1] + " " + finalParks[2]);
+                            Log.e("New Park Info", finalParks[0] + " " + linkStreetView(finalParks[2], finalParks[3], finalParks[4]) + " " + finalParks[1] + " " + finalParks[2]);
                             Location parkLocation = new Location("Park Location");
                             parkLocation.setLatitude(Double.parseDouble(finalParks[2]));
                             parkLocation.setLongitude(Double.parseDouble(finalParks[3]));
-                            mParksList.add(new Park(finalParks[0], linkStreetView(finalParks[2], finalParks[3]), finalParks[1],getDistance(parkLocation)));
+                            mParksList.add(new Park(finalParks[0], linkStreetView(finalParks[2], finalParks[3], finalParks[4]), finalParks[1], getDistance(parkLocation)));
 
                         } catch (JSONException e1) {
                             e1.printStackTrace();
                         }
                     }
                     FragmentActivity activity = (FragmentActivity) mContext;
-                    CustomListAdapter adapter = new CustomListAdapter(activity,mParksList);
+                    CustomListAdapter adapter = new CustomListAdapter(activity, mParksList);
                     mListView.setAdapter(adapter);
                 } else {
 
@@ -70,8 +70,12 @@ final class ParksListMaker implements FactoryInterface{
 
 
     }
-    private String linkStreetView(String lat,String lng){
-       return  "https://maps.googleapis.com/maps/api/streetview?size=400x400&location="+lat+","+lng+"&fov=90&heading=235&pitch=10";
+    private String linkStreetView(String lat,String lng,String imageSettings){
+            Log.e("yay",imageSettings);
+            if(imageSettings.contains("pitch=")){
+            return  "https://maps.googleapis.com/maps/api/streetview?size=400x400&location="+lat +"," +lng + imageSettings;
+            }else {
+                return imageSettings;}
     }
     private String getDistance(Location parkLocation){
         String range;

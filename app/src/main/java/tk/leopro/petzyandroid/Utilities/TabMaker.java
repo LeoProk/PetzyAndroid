@@ -13,6 +13,7 @@ import tk.leopro.petzyandroid.Fragments.Found;
 import tk.leopro.petzyandroid.Fragments.Lost;
 import tk.leopro.petzyandroid.Fragments.OthersAdopting;
 import tk.leopro.petzyandroid.Fragments.ParksClosest;
+import tk.leopro.petzyandroid.Fragments.ParksMap;
 import tk.leopro.petzyandroid.Fragments.VetsClosest;
 import tk.leopro.petzyandroid.Fragments.VetsMap;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
@@ -103,10 +104,10 @@ final class TabMaker implements FactoryInterface {
                 return new Lost();
             case "found":
                 return new Found();
-            case "parksNear":
+            case "parkNear":
                 return new ParksClosest();
-            case "parksMap":
-                return new ParksClosest();
+            case "parkMap":
+                return new ParksMap();
             case "vetNear":
                 return new VetsClosest();
             case "vetMap":

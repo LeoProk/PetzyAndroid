@@ -35,10 +35,6 @@ public class VetsClosest extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.vets_closest_fragment, container, false);
-        //Set arrays for tab name tab fragment tags and fragment and create tabs.
-        final String[] tabName = {getResources().getString(R.string.closest),getResources().getString(R.string.map)};
-        final String[] tabTags = {"vetNear","vetMap"};
-        ((MainActivity) getActivity()).changeTabs(tabName, tabTags);
         return rootView;
     }
 }

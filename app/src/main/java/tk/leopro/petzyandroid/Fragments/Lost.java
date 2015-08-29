@@ -39,9 +39,6 @@ public class Lost extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.lost_fragmnet, container, false);
-        final String[] tabName = {getResources().getString(R.string.lost),getResources().getString(R.string.found)};
-        final String[] tabTags = {"lost","found"};
-        ((MainActivity) getActivity()).changeTabs(tabName, tabTags);
         return rootView;
     }
 

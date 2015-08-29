@@ -40,18 +40,9 @@ public class ParksClosest extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.parks_closest_fragment, container, false);
-        //create fitting tabs
-        createTabs();
         //call list view and populate it
-        final ListView parkList = (ListView)rootView.findViewById(R.id.closeByParks);
-        AppFactory.getParksList(getActivity(),parkList).doTask();
+        final ListView parkList = (ListView) rootView.findViewById(R.id.closeByParks);
+        AppFactory.getParksList(getActivity(), parkList).doTask();
         return rootView;
-    }
-
-    private void createTabs(){
-        final String[] tabName = {getResources().getString(R.string.closest),getResources().getString(R.string.map)};
-        final String[] tabTags = {"parkNear","parkMap"};
-        ((MainActivity) getActivity()).changeTabs(tabName, tabTags);
-
     }
 }

@@ -20,7 +20,9 @@ import android.content.Context;
 import android.support.design.widget.TabLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import tk.leopro.petzyandroid.AppSpecific.Park;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
 /**
@@ -67,5 +69,10 @@ public class UtilitiesFactory {
     public static FactoryInterface replaceFragment(Context context, Fragment fragment, String tag,
             boolean addToBackStack) {
         return new ReplaceFragment(context, fragment, tag, addToBackStack);
+    }
+    
+    //Uses SQLite database with update save or retrieve commands
+    public static FactoryInterface callSQL(Context context, List<Park> users,String saveRetrieveUpdate) {
+        return new SQLDatabase(context, users, saveRetrieveUpdate);
     }
 }

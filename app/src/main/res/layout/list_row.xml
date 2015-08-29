@@ -15,6 +15,7 @@
         android:id="@+id/length"
         android:layout_marginTop="400dp"
         android:layout_width="wrap_content"
+        android:padding="8dp"
         android:layout_height="wrap_content"
          />
     <TextView
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
         android:layout_alignParentRight="true"
+        android:padding="8dp"
         android:textStyle="bold" />
 
     <TextView
@@ -30,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:padding="8dp"
         android:layout_marginTop="420dp" />
 
     <Space
