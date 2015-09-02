@@ -15,6 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import tk.leopro.petzyandroid.AppController;
@@ -51,12 +52,14 @@ final class ParksListMaker implements FactoryInterface{
                             Location parkLocation = new Location("Park Location");
                             parkLocation.setLatitude(Double.parseDouble(finalParks[2]));
                             parkLocation.setLongitude(Double.parseDouble(finalParks[3]));
-                            mParksList.add(new Park(finalParks[0], linkStreetView(finalParks[2], finalParks[3], finalParks[4]), finalParks[1], getDistance(parkLocation)));
+                            double currentDistance =  getDistance(parkLocation);
+                            mParksList.add(new Park(finalParks[0], linkStreetView(finalParks[2], finalParks[3], finalParks[4]), finalParks[1], distanceInKM(currentDistance),((int)currentDistance)));
 
                         } catch (JSONException e1) {
                             e1.printStackTrace();
                         }
                     }
+                    Collections.sort(mParksList);
                     FragmentActivity activity = (FragmentActivity) mContext;
                     CustomListAdapter adapter = new CustomListAdapter(activity, mParksList);
                     mListView.setAdapter(adapter);
@@ -77,16 +80,20 @@ final class ParksListMaker implements FactoryInterface{
             }else {
                 return imageSettings;}
     }
-    private String getDistance(Location parkLocation){
-        String range;
+    private double getDistance(Location parkLocation){
         double distance = Math.round(AppController.currentLocation.distanceTo(parkLocation));
-        if(distance < 1000){
+
+        return distance;
+
+    }
+    private String distanceInKM(double parkDistance){
+        String range;
+        if(parkDistance < 1000){
             range = "meter";
         }else {
             range = "kilometre";
-            distance =distance/1000;
+            parkDistance = parkDistance/1000;
         }
-        return String.valueOf(distance + " " + range);
-
+        return String.valueOf(parkDistance)+ " " + range;
     }
 }

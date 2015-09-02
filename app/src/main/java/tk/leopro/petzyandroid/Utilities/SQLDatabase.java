@@ -103,7 +103,7 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
         if (cursor.moveToFirst()) {
             do {
                 String userInfo[] = cursor.getString(1).split("\n");
-                Park contact = new Park(userInfo[0], userInfo[1],userInfo[3],userInfo[4]);
+                Park contact = new Park(userInfo[0], userInfo[1],userInfo[3],userInfo[4],Integer.parseInt(userInfo[5]));
                 mParks.add(contact);
             } while (cursor.moveToNext());
         }
