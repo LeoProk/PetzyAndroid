@@ -92,7 +92,6 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
 
     // Getting All Contacts
     public List<Park> getAllContacts() {
-        mParks = new ArrayList<>();
         // Select All Query
         String selectQuery = "SELECT  * FROM " + TABLE_CONTACTS;
 
@@ -103,8 +102,8 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
         if (cursor.moveToFirst()) {
             do {
                 String userInfo[] = cursor.getString(1).split("\n");
-                Park contact = new Park(userInfo[0], userInfo[1],userInfo[3],userInfo[4],Integer.parseInt(userInfo[5]));
-                mParks.add(contact);
+                Park park = new Park(userInfo[0], userInfo[1],userInfo[2],userInfo[3],userInfo[4]);
+                mParks.add(park);
             } while (cursor.moveToNext());
         }
 
@@ -128,4 +127,5 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
         }
         return mParks;
     }
+
 }

@@ -40,6 +40,8 @@ import com.parse.ParseObject;
 
 import java.util.ArrayList;
 
+import tk.leopro.petzyandroid.AppSpecific.AppFactory;
+import tk.leopro.petzyandroid.AppSpecific.Park;
 import tk.leopro.petzyandroid.Fragments.Found;
 import tk.leopro.petzyandroid.Fragments.NewsFragment;
 import tk.leopro.petzyandroid.Fragments.VetsClosest;
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity  implements ConnectionCallba
         buildGoogleApiClient();
         //Create news Fragment
         UtilitiesFactory.addFragment(this, new NewsFragment(), AppController.mFragmentTag, true).doTask();
+        AppFactory.buildSQLParksData(this).doTask();
 
     }
 
@@ -120,7 +123,6 @@ public class MainActivity extends AppCompatActivity  implements ConnectionCallba
 
     @Override
     public void onConnected(Bundle bundle) {
-        Log.e("yay","yayyy");
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
         if (mLastLocation != null) {

@@ -72,7 +72,7 @@ public class UtilitiesFactory {
     }
     
     //Uses SQLite database with update save or retrieve commands
-    public static FactoryInterface callSQL(Context context, List<Park> users,String saveRetrieveUpdate) {
-        return new SQLDatabase(context, users, saveRetrieveUpdate);
+    public static FactoryInterface callSQL(Context context, List<Park> parks,String saveRetrieveUpdate) {
+        return new SQLDatabase(context, parks, saveRetrieveUpdate);
     }
 }

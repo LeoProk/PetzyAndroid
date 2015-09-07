@@ -21,13 +21,12 @@ import java.util.List;
 import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.Fragments.CustomListAdapter;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 
 /**
- * Created by Leo on 8/6/2015.
+ * Retrieve data from sql and put it in list view adapter
  */
 final class ParksListMaker implements FactoryInterface{
-
-    private ArrayList<Park> mParksList;
     private Context mContext;
     private ListView mListView;
 
@@ -39,61 +38,16 @@ final class ParksListMaker implements FactoryInterface{
 
     @Override
     public Object doTask() {
-        mParksList = new ArrayList<>();
-        final ParseQuery query = ParseQuery.getQuery("Parks");
-        query.getInBackground("X2xpPlxMB5", new GetCallback<ParseObject>() {
-            public void done(ParseObject object, ParseException e) {
-                if (e == null) {
-                    JSONArray myArray = object.getJSONArray("parks");
-                    for (int i = 0; i < myArray.length(); i++) {
-                        try {
-                            String[] finalParks = myArray.get(i).toString().split("Break:");
-                            Log.e("New Park Info", finalParks[0] + " " + linkStreetView(finalParks[2], finalParks[3], finalParks[4]) + " " + finalParks[1] + " " + finalParks[2]);
-                            Location parkLocation = new Location("Park Location");
-                            parkLocation.setLatitude(Double.parseDouble(finalParks[2]));
-                            parkLocation.setLongitude(Double.parseDouble(finalParks[3]));
-                            double currentDistance =  getDistance(parkLocation);
-                            mParksList.add(new Park(finalParks[0], linkStreetView(finalParks[2], finalParks[3], finalParks[4]), finalParks[1], distanceInKM(currentDistance),((int)currentDistance)));
 
-                        } catch (JSONException e1) {
-                            e1.printStackTrace();
-                        }
-                    }
-                    Collections.sort(mParksList);
-                    FragmentActivity activity = (FragmentActivity) mContext;
-                    CustomListAdapter adapter = new CustomListAdapter(activity, mParksList);
-                    mListView.setAdapter(adapter);
-                } else {
-
-
-                }
-            }
-        });
+        List<Park> parksList = new ArrayList();
+        UtilitiesFactory.callSQL(mContext,parksList,"retrieve").doTask();
+        Log.e("YAY",parksList.get(2).toString());
+        Collections.sort(parksList);
+        FragmentActivity activity = (FragmentActivity) mContext;
+        CustomListAdapter adapter = new CustomListAdapter(activity, parksList);
+        mListView.setAdapter(adapter);
             return null;
 
 
-    }
-    private String linkStreetView(String lat,String lng,String imageSettings){
-            Log.e("yay",imageSettings);
-            if(imageSettings.contains("pitch=")){
-            return  "https://maps.googleapis.com/maps/api/streetview?size=400x400&location="+lat +"," +lng + imageSettings;
-            }else {
-                return imageSettings;}
-    }
-    private double getDistance(Location parkLocation){
-        double distance = Math.round(AppController.currentLocation.distanceTo(parkLocation));
-
-        return distance;
-
-    }
-    private String distanceInKM(double parkDistance){
-        String range;
-        if(parkDistance < 1000){
-            range = "meter";
-        }else {
-            range = "kilometre";
-            parkDistance = parkDistance/1000;
-        }
-        return String.valueOf(parkDistance)+ " " + range;
     }
 }
