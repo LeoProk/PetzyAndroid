@@ -16,7 +16,12 @@
 
 package tk.leopro.petzyandroid;
 
-import android.app.Fragment;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+import com.google.android.gms.location.LocationServices;
+
 import android.content.res.Configuration;
 import android.location.Location;
 import android.os.Bundle;
@@ -25,36 +30,21 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
-import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
-
-
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
-import com.parse.ParseObject;
-
-import java.util.ArrayList;
-
 import tk.leopro.petzyandroid.AppSpecific.AppFactory;
-import tk.leopro.petzyandroid.AppSpecific.Park;
-import tk.leopro.petzyandroid.Fragments.Found;
 import tk.leopro.petzyandroid.Fragments.NewsFragment;
-import tk.leopro.petzyandroid.Fragments.VetsClosest;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.UserInterface.UIFactory;
 import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 
 /**
-* Main class have navigator drawer and toolbar that it pass to fragment. And method to hide tabs or
-* to change tabs on click and names.
-*/
+ * Main class have navigator drawer and toolbar that it pass to fragment. And method to hide tabs or
+ * to change tabs on click and names.
+ */
 
-public class MainActivity extends AppCompatActivity  implements ConnectionCallbacks, OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity implements ConnectionCallbacks, OnConnectionFailedListener {
 
 
     private ActionBarDrawerToggle mDrawerToggle;
@@ -117,8 +107,8 @@ public class MainActivity extends AppCompatActivity  implements ConnectionCallba
         mGoogleApiClient.connect();
     }
 
-    public void changeTabs(String[] tabNames,String[] tags) {
-        UtilitiesFactory.createTabs(this,mTabLayout,tabNames,tags).doTask();
+    public void changeTabs(String[] tabNames, String[] tags) {
+        UtilitiesFactory.createTabs(this, mTabLayout, tabNames, tags).doTask();
     }
 
     @Override
@@ -129,12 +119,11 @@ public class MainActivity extends AppCompatActivity  implements ConnectionCallba
             AppController.currentLocation = new Location("Current Location");
             AppController.currentLocation.setLatitude(mLastLocation.getLatitude());
             AppController.currentLocation.setLongitude(mLastLocation.getLongitude());
-            //Log.e("my location is:",String.valueOf(mLastLocation.getLatitude())+ " " + String.valueOf(mLastLocation.getLongitude()));
         }
     }
 
     @Override
-    public void onConnectionSuspended(int i){
+    public void onConnectionSuspended(int i) {
     }
 
     @Override

@@ -19,7 +19,6 @@ import android.app.Fragment;
 import android.content.Context;
 import android.support.design.widget.TabLayout;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import tk.leopro.petzyandroid.AppSpecific.Park;
@@ -31,13 +30,15 @@ import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 public class UtilitiesFactory {
 
     //Switch between 2 fragments
-    public static FactoryInterface switchFragments(Context context,String newFragmentTag){
-        return new FragmentSwitcher(context,newFragmentTag);
+    public static FactoryInterface switchFragments(Context context, String newFragmentTag) {
+        return new FragmentSwitcher(context, newFragmentTag);
     }
+
     //Change the tabs of main tab layout
-    public static FactoryInterface createTabs(Context context,TabLayout tabLayout,String[]tabNames,String[] tags){
-        return new TabMaker(context,tabLayout,tabNames,tags);
+    public static FactoryInterface createTabs(Context context, TabLayout tabLayout, String[] tabNames, String[] tags) {
+        return new TabMaker(context, tabLayout, tabNames, tags);
     }
+
     //Check for network status return bool
     public static FactoryInterface checkNetwork(Context context) {
         return new NetworkCheck(context);
@@ -61,18 +62,18 @@ public class UtilitiesFactory {
 
     //Adds new fragment.
     public static FactoryInterface addFragment(Context context, Fragment fragment, String tag,
-            boolean addToBackStack) {
+                                               boolean addToBackStack) {
         return new AddFragment(context, fragment, tag, addToBackStack);
     }
 
     //Replace the current fragment with new fragment.
     public static FactoryInterface replaceFragment(Context context, Fragment fragment, String tag,
-            boolean addToBackStack) {
+                                                   boolean addToBackStack) {
         return new ReplaceFragment(context, fragment, tag, addToBackStack);
     }
-    
+
     //Uses SQLite database with update save or retrieve commands
-    public static FactoryInterface callSQL(Context context, List<Park> parks,String saveRetrieveUpdate) {
+    public static FactoryInterface callSQL(Context context, List<Park> parks, String saveRetrieveUpdate) {
         return new SQLDatabase(context, parks, saveRetrieveUpdate);
     }
 }

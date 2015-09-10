@@ -22,13 +22,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tk.leopro.petzyandroid.AppSpecific.AppFactory;
-import tk.leopro.petzyandroid.MainActivity;
 import tk.leopro.petzyandroid.R;
 
 /**
- * This fragment show list of pet available for adopting sorted by time . also it have
- * option to add pets that you want other to adopt
+ * This fragment show list of pet available for adopting sorted by time . also it have option to add
+ * pets that you want other to adopt
  */
 public class DogsAdopting extends Fragment {
 

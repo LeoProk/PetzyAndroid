@@ -32,7 +32,7 @@ final class FragmentSwitcher implements FactoryInterface {
     private String mNewFragTag;
 
 
-    public FragmentSwitcher(Context context,String newFragTag){
+    public FragmentSwitcher(Context context, String newFragTag) {
 
         mNewFragTag = newFragTag;
 
@@ -43,9 +43,9 @@ final class FragmentSwitcher implements FactoryInterface {
     public Object doTask() {
         final AppCompatActivity activity = (AppCompatActivity) mContext;
         FragmentTransaction ft = activity.getFragmentManager().beginTransaction();
-            ft.remove(activity.getFragmentManager().findFragmentByTag(AppController.mFragmentTag));
-            AppController.mFragmentTag = mNewFragTag;
-            ft.show(activity.getFragmentManager().findFragmentByTag(mNewFragTag)).commit();
+        ft.remove(activity.getFragmentManager().findFragmentByTag(AppController.mFragmentTag));
+        AppController.mFragmentTag = mNewFragTag;
+        ft.show(activity.getFragmentManager().findFragmentByTag(mNewFragTag)).commit();
 
 
         return null;

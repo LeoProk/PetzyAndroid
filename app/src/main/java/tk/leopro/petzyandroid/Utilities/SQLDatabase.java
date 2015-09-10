@@ -21,8 +21,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import java.util.ArrayList;
+
 import java.util.List;
+
 import tk.leopro.petzyandroid.AppSpecific.Park;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
@@ -102,7 +103,7 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
         if (cursor.moveToFirst()) {
             do {
                 String userInfo[] = cursor.getString(1).split("\n");
-                Park park = new Park(userInfo[0], userInfo[1],userInfo[2],userInfo[3],userInfo[4]);
+                Park park = new Park(userInfo[0], userInfo[1], userInfo[2], userInfo[3], userInfo[4]);
                 mParks.add(park);
             } while (cursor.moveToNext());
         }

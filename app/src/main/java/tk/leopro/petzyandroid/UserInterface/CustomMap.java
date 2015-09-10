@@ -1,14 +1,13 @@
 package tk.leopro.petzyandroid.UserInterface;
 
-import android.content.Context;
-import android.location.Location;
-import android.provider.SyncStateContract;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.model.LatLng;
+
+import android.content.Context;
+import android.location.Location;
 
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
@@ -20,7 +19,7 @@ final class CustomMap implements FactoryInterface {
     private Context mContext;
     private MapView mMapView;
 
-    public CustomMap(Context context,MapView mapView){
+    public CustomMap(Context context, MapView mapView) {
 
         mContext = context;
         mMapView = mapView;
@@ -37,10 +36,10 @@ final class CustomMap implements FactoryInterface {
         if (currentLocation != null) {
             latLngLocation = new LatLng(currentLocation.getLatitude(),
                     currentLocation.getLongitude());
-        }else {
-            latLngLocation = new LatLng(31.7833,35.2167);
+        } else {
+            latLngLocation = new LatLng(31.7833, 35.2167);
         }
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLngLocation,15));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLngLocation, 15));
         return null;
     }
 }

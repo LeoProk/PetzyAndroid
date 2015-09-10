@@ -15,20 +15,20 @@
  */
 package tk.leopro.petzyandroid.AppSpecific;
 
-import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.ListView;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import android.os.AsyncTask;
+import android.util.Log;
+
 import java.io.IOException;
+
 /**
  * Get info from html and put in listview
- * */
-final class AdoptingHtmlParser extends AsyncTask<Void,Void,Void> {
+ */
+final class AdoptingHtmlParser extends AsyncTask<Void, Void, Void> {
 
     @Override
     protected Void doInBackground(Void... params) {
@@ -36,12 +36,12 @@ final class AdoptingHtmlParser extends AsyncTask<Void,Void,Void> {
         return null;
     }
 
-    private void yadParsing(){
+    private void yadParsing() {
         try {
             Document doc = Jsoup.connect("http://www.yad2.co.il/Pets/Pets.php?AreaID=&PetTypeID=&PetSubTypeID=&PetDealID=2&Age=&Sex=&fromPrice=&untilPrice=&Info=").get();
             Elements messages = doc.select("tbody");
 
-            for(Element petInfo : messages){
+            for (Element petInfo : messages) {
 
                 Log.e("yays", petInfo.toString());
             }
@@ -49,7 +49,8 @@ final class AdoptingHtmlParser extends AsyncTask<Void,Void,Void> {
             e.printStackTrace();
         }
     }
-    private void agoraParsing(){
+
+    private void agoraParsing() {
 
     }
 }

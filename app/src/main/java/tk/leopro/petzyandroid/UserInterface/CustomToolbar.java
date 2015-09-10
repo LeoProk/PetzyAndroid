@@ -21,7 +21,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
-import tk.leopro.petzyandroid.R;
 
 /**
  * This class contain logic of toolbar
@@ -40,7 +39,7 @@ final class CustomToolbar implements FactoryInterface {
     //replace the default action bat with toolbar
     @Override
     public Object doTask() {
-        final AppCompatActivity activity = ( AppCompatActivity) mContext;
+        final AppCompatActivity activity = (AppCompatActivity) mContext;
         activity.setSupportActionBar(mToolbar);
         ActionBar ab = activity.getSupportActionBar();
         ab.setDisplayShowHomeEnabled(true);

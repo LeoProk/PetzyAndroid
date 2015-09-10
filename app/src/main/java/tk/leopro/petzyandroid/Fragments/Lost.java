@@ -18,19 +18,15 @@ package tk.leopro.petzyandroid.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tk.leopro.petzyandroid.AppController;
-import tk.leopro.petzyandroid.MainActivity;
 import tk.leopro.petzyandroid.R;
-import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
 
 /**
- * This fragment show list of pet available for adopting sorted by time . also it have
- * option to add pets that you want other to adopt
+ * This fragment show list of pet available for adopting sorted by time . also it have option to add
+ * pets that you want other to adopt
  */
 public class Lost extends Fragment {
 

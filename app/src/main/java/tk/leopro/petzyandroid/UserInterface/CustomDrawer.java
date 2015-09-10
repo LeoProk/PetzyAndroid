@@ -25,19 +25,18 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.Fragments.AdoptionTips;
+import tk.leopro.petzyandroid.Fragments.DogsAdopting;
 import tk.leopro.petzyandroid.Fragments.Lost;
 import tk.leopro.petzyandroid.Fragments.ParksClosest;
-import tk.leopro.petzyandroid.Fragments.ParksMap;
-import tk.leopro.petzyandroid.Fragments.DogsAdopting;
 import tk.leopro.petzyandroid.Fragments.VetsClosest;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.MainActivity;
 import tk.leopro.petzyandroid.R;
 import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
-
-import java.util.ArrayList;
 
 /**
  * This class contain logic of drawer.
@@ -97,7 +96,7 @@ final class CustomDrawer implements FactoryInterface {
 
     //create fragment based on clicked position
     private void updateDisplay(int position) {
-        final AppCompatActivity activity = ( AppCompatActivity) mContext;
+        final AppCompatActivity activity = (AppCompatActivity) mContext;
         //change the fragment tag based on location pressed
         String tag = null;
         String[] tabName = null;
@@ -107,14 +106,14 @@ final class CustomDrawer implements FactoryInterface {
             case 0:
                 tag = "dog";
                 fragment = new DogsAdopting();
-                tabName = new String[]{mContext.getResources().getString(R.string.dogs),mContext.getResources().getString(R.string.cats),mContext.getResources().getString(R.string.other)};
-                tabTags = new String[] {"dog","cat","other"};
+                tabName = new String[]{mContext.getResources().getString(R.string.dogs), mContext.getResources().getString(R.string.cats), mContext.getResources().getString(R.string.other)};
+                tabTags = new String[]{"dog", "cat", "other"};
                 break;
             case 1:
                 tag = "lost";
                 fragment = new Lost();
-                tabName = new String[]{mContext.getResources().getString(R.string.lost),mContext.getResources().getString(R.string.found)};
-                tabTags = new String[]{"lost","found"};
+                tabName = new String[]{mContext.getResources().getString(R.string.lost), mContext.getResources().getString(R.string.found)};
+                tabTags = new String[]{"lost", "found"};
                 break;
             case 2:
                 tag = "tips";
@@ -123,28 +122,28 @@ final class CustomDrawer implements FactoryInterface {
             case 3:
                 tag = "parksNear";
                 fragment = new ParksClosest();
-                tabName = new String[]{mContext.getResources().getString(R.string.closest),mContext.getResources().getString(R.string.map)};
-                tabTags = new String[]{"parkNear","parkMap"};
+                tabName = new String[]{mContext.getResources().getString(R.string.closest), mContext.getResources().getString(R.string.map)};
+                tabTags = new String[]{"parkNear", "parkMap"};
                 break;
             case 4:
                 tag = "vetNear";
                 fragment = new VetsClosest();
-                tabName = new String[]{mContext.getResources().getString(R.string.closest),mContext.getResources().getString(R.string.map)};
-                tabTags = new String[]{"vetNear","vetMap"};
+                tabName = new String[]{mContext.getResources().getString(R.string.closest), mContext.getResources().getString(R.string.map)};
+                tabTags = new String[]{"vetNear", "vetMap"};
                 break;
             default:
                 break;
         }
         //Create tabs
-        if(tabName != null) {
+        if (tabName != null) {
             ((MainActivity) mContext).changeTabs(tabName, tabTags);
         }
         //Change to clicked Fragment
-        if(activity.getFragmentManager().findFragmentByTag(tag)==null){
+        if (activity.getFragmentManager().findFragmentByTag(tag) == null) {
             AppController.mFragmentTag = tag;
-            UtilitiesFactory.addFragment(mContext,fragment,tag,true).doTask();
-        }else {
-            UtilitiesFactory.switchFragments(mContext,tag).doTask();
+            UtilitiesFactory.addFragment(mContext, fragment, tag, true).doTask();
+        } else {
+            UtilitiesFactory.switchFragments(mContext, tag).doTask();
         }
         mDrawerLayout.closeDrawer(mDrawerList);
     }

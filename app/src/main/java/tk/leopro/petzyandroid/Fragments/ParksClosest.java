@@ -16,7 +16,6 @@
 
 package tk.leopro.petzyandroid.Fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,11 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
 import tk.leopro.petzyandroid.AppSpecific.AppFactory;
-import tk.leopro.petzyandroid.AppSpecific.Park;
-import tk.leopro.petzyandroid.MainActivity;
 import tk.leopro.petzyandroid.R;
 
 /**

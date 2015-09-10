@@ -26,8 +26,8 @@ import tk.leopro.petzyandroid.AppSpecific.AppFactory;
 import tk.leopro.petzyandroid.R;
 
 /**
- * This fragment show list of pet available for adopting sorted by time . also it have
- * option to add pets that you want other to adopt
+ * This fragment show list of pet available for adopting sorted by time . also it have option to add
+ * pets that you want other to adopt
  */
 public class CatsAdopting extends Fragment {
 

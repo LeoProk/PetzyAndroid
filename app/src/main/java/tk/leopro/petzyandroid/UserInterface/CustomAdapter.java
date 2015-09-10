@@ -16,7 +16,8 @@
 package tk.leopro.petzyandroid.UserInterface;
 
 /**
- * Custom adapter which extends BaseAdapter , this is used for inflating each row items of the listview .
+ * Custom adapter which extends BaseAdapter , this is used for inflating each row items of the
+ * listview .
  */
 
 import android.app.Activity;
@@ -28,9 +29,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import tk.leopro.petzyandroid.R;
-
 import java.util.List;
+
+import tk.leopro.petzyandroid.R;
 
 final class CustomAdapter extends BaseAdapter {
 

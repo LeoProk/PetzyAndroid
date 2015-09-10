@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 
 import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.Fragments.CatsAdopting;
@@ -30,7 +29,7 @@ final class TabMaker implements FactoryInterface {
     private String mTag;
     private Fragment mFragment;
 
-    public TabMaker (Context context,TabLayout tabLayout,String[] tabNames ,String[] tags  ){
+    public TabMaker(Context context, TabLayout tabLayout, String[] tabNames, String[] tags) {
         mContext = context;
         mTabLayout = tabLayout;
         mTabNames = tabNames;
@@ -40,7 +39,7 @@ final class TabMaker implements FactoryInterface {
 
     @Override
     public Object doTask() {
-        final AppCompatActivity activity = ( AppCompatActivity) mContext;
+        final AppCompatActivity activity = (AppCompatActivity) mContext;
         mTabLayout.removeAllTabs();
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         for (int i = 0; i < mTabNames.length; i++) {
@@ -69,11 +68,11 @@ final class TabMaker implements FactoryInterface {
                     default:
                         break;
                 }
-                if(activity.getFragmentManager().findFragmentByTag(mTag)==null){
+                if (activity.getFragmentManager().findFragmentByTag(mTag) == null) {
                     AppController.mFragmentTag = mTag;
-                    UtilitiesFactory.addFragment(mContext,mFragment,mTag,true).doTask();
-                }else {
-                    UtilitiesFactory.switchFragments(mContext,mTag).doTask();
+                    UtilitiesFactory.addFragment(mContext, mFragment, mTag, true).doTask();
+                } else {
+                    UtilitiesFactory.switchFragments(mContext, mTag).doTask();
                 }
             }
 
@@ -91,9 +90,10 @@ final class TabMaker implements FactoryInterface {
 
         return null;
     }
-    final Fragment getFragmentByTag(String tag){
 
-        switch (tag){
+    final Fragment getFragmentByTag(String tag) {
+
+        switch (tag) {
             case "dog":
                 return new DogsAdopting();
             case "cat":

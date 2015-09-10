@@ -27,7 +27,7 @@ import tk.leopro.petzyandroid.R;
 /**
  * Fragments  that saves inputted text and image in databse from pet adopting or found and lost
  */
-public class AddComent extends Fragment {
+public class AddLostFound extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

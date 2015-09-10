@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
 /**
@@ -14,15 +12,17 @@ import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 public class AppFactory {
 
     //Parsing info from html
-    public static AsyncTask getHtmlInfo(){
+    public static AsyncTask getHtmlInfo() {
         return new AdoptingHtmlParser().execute();
     }
+
     //Create list of park with data taken from parse database
-    public static FactoryInterface getParksList(Context context,ListView listView){
-        return new ParksListMaker(context,listView);
+    public static FactoryInterface getParksList(Context context, ListView listView) {
+        return new ParksListMaker(context, listView);
     }
+
     //Build SQLite database using data from Parse
-    public static FactoryInterface buildSQLParksData(Context context){
+    public static FactoryInterface buildSQLParksData(Context context) {
         return new SqlParksBuilder(context);
     }
 }

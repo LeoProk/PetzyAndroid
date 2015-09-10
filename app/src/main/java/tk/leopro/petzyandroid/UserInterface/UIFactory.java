@@ -15,12 +15,12 @@
  */
 package tk.leopro.petzyandroid.UserInterface;
 
+import com.google.android.gms.maps.MapView;
+
 import android.content.Context;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
-
-import com.google.android.gms.maps.MapView;
 
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
@@ -36,9 +36,10 @@ public class UIFactory {
 
     //Creates navigation drawer
     public static FactoryInterface getDrawer(Context context, DrawerLayout drawerLayout,
-            ListView drawerList) {
+                                             ListView drawerList) {
         return new CustomDrawer(context, drawerLayout, drawerList);
     }
+
     //Creates google map
     public static FactoryInterface getMap(Context context, MapView mapView) {
         return new CustomMap(context, mapView);

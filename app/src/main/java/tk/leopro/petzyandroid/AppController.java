@@ -1,20 +1,15 @@
 package tk.leopro.petzyandroid;
 
-import android.app.Application;
-import android.location.Location;
-import android.support.design.widget.TabLayout;
-import android.text.TextUtils;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.parse.Parse;
 
-import java.util.ArrayList;
+import android.app.Application;
+import android.location.Location;
+import android.text.TextUtils;
 
-import tk.leopro.petzyandroid.AppSpecific.AppFactory;
-import tk.leopro.petzyandroid.AppSpecific.Park;
 import tk.leopro.petzyandroid.VolleyApi.LruBitmapCache;
 
 /**
@@ -22,18 +17,12 @@ import tk.leopro.petzyandroid.VolleyApi.LruBitmapCache;
  */
 public class AppController extends Application {
 
-    public static String mFragmentTag = "news";
-
-    public static Location currentLocation;
-
     public static final String TAG = AppController.class.getSimpleName();
-
-    private RequestQueue mRequestQueue;
-
-    private ImageLoader mImageLoader;
-
+    public static String mFragmentTag = "news";
+    public static Location currentLocation;
     private static AppController mInstance;
-
+    private RequestQueue mRequestQueue;
+    private ImageLoader mImageLoader;
 
     // code needed for volly api
     public static synchronized AppController getInstance() {
@@ -47,7 +36,6 @@ public class AppController extends Application {
         Parse.initialize(this, "NGE1Ln6TlSWeJ5HVh7dR0wC6azlNIiS1pUZAmV33", "UM7GpKFElo7dCeFWjpSdJoHi32pxjclG4rokbwg9");
         mInstance = this;
     }
-
 
 
     public RequestQueue getRequestQueue() {
