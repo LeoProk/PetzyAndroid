@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.ListView;
 
+import com.google.android.gms.maps.GoogleMap;
+
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
 /**
@@ -18,11 +20,15 @@ public class AppFactory {
 
     //Create list of park with data taken from parse database
     public static FactoryInterface getParksList(Context context, ListView listView) {
-        return new ParksListMaker(context, listView);
+        return new ParkListMaker(context, listView);
     }
 
     //Build SQLite database using data from Parse
     public static FactoryInterface buildSQLParksData(Context context) {
         return new SqlParksBuilder(context);
+    }
+    //Create markers on google maps
+    public static FactoryInterface createMarkers(GoogleMap googleMap,Context context) {
+        return new ParkMapMaker(googleMap,context);
     }
 }

@@ -2,6 +2,8 @@ package tk.leopro.petzyandroid.AppSpecific;
 
 import android.location.Location;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import tk.leopro.petzyandroid.AppController;
 
 /**
@@ -58,7 +60,10 @@ public class Park implements Comparable {
         return distance;
 
     }
+    public LatLng getLatLng(){
 
+        return new LatLng(Double.parseDouble(mLat),Double.parseDouble(mLng));
+    }
     private String distanceInKM(int parkDistance) {
         String range;
         if (parkDistance < 1000) {

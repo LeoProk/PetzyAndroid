@@ -9,12 +9,14 @@ import com.google.android.gms.maps.model.LatLng;
 import android.content.Context;
 import android.location.Location;
 
+import tk.leopro.petzyandroid.AppController;
+import tk.leopro.petzyandroid.AppSpecific.AppFactory;
 import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
 
 /**
  * Creates google map and zooms in to current location.
  */
-final class CustomMap implements FactoryInterface {
+final class CustomMap implements FactoryInterface  {
 
     private Context mContext;
     private MapView mMapView;
@@ -27,19 +29,25 @@ final class CustomMap implements FactoryInterface {
 
     @Override
     public Object doTask() {
-        GoogleMap map = mMapView.getMap();
+        final GoogleMap map = mMapView.getMap();
         map.getUiSettings().setMyLocationButtonEnabled(false);
         map.setMyLocationEnabled(true);
+        map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
+            @Override
+            public void onMapLoaded() {
+                AppFactory.createMarkers(map,mContext).doTask();
+            }
+        });
         MapsInitializer.initialize(mContext);
-        Location currentLocation = map.getMyLocation();
         LatLng latLngLocation;
-        if (currentLocation != null) {
-            latLngLocation = new LatLng(currentLocation.getLatitude(),
-                    currentLocation.getLongitude());
+        if (AppController.currentLocation != null) {
+            latLngLocation = new LatLng(AppController.currentLocation.getLatitude(),
+                    AppController.currentLocation.getLongitude());
         } else {
             latLngLocation = new LatLng(31.7833, 35.2167);
         }
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLngLocation, 15));
         return null;
     }
+
 }
