@@ -33,11 +33,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import tk.leopro.petzyandroid.AppSpecific.AppFactory;
+import tk.leopro.petzyandroid.main.AppFactory;
 import tk.leopro.petzyandroid.Fragments.NewsFragment;
-import tk.leopro.petzyandroid.Interfaces.FactoryInterface;
-import tk.leopro.petzyandroid.UserInterface.UIFactory;
-import tk.leopro.petzyandroid.Utilities.UtilitiesFactory;
+import troll.Fragments.Interfaces.FactoryInterface;
+import troll.Fragments.UserInterface.UIFactory;
+import troll.Fragments.Utilities.UtilitiesFactory;
 
 /**
  * Main class have navigator drawer and toolbar that it pass to fragment. And method to hide tabs or

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-2e5f0b28b7b32e4a02e2c95ed625c6d9c294ecf6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-6e2dbdeaa624823b7c2623a82f879215d4b38ceb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9aa93835393824b436f366120c9ba8a0260ce75d">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-14aa24dc341038fab3aff5f5eed167b0f530ee5d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-a3014066da8307fc4cb41f1838bc9306706de33d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-1aa2c77c6b75b3f6cdb2b749749faeac28e1f619.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\libs\Parse-1.9.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="56c22930b5d4f77015b6a40c7f14103d3e101001">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\Parse-1.9.4-ec08ded8cf9327360c57af1b775531673ff39737.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="79a5b6d9fbab3b5fb4c6f86a1ed7a17722fd937b">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-fe8b5f3ab9cf7f4ed1e4b2aaf17460f3dfa8bb29.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.8.2\64238922c4006c3d0a9951c4c03983ecc6a1e1a0\jsoup-1.8.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="64238922c4006c3d0a9951c4c03983ecc6a1e1a0">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jsoup-1.8.2-c2626e0eb1e656707f20ffb96ab515232a2413e9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.3.0\27cabf3558be23a89f054334dd92512645ad34d9\bolts-android-1.3.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="27cabf3558be23a89f054334dd92512645ad34d9">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\bolts-android-1.3.0-12a29c7f8af06ba610803225214a9ba8f3b0a132.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-70f62ab53de8baf83c91813477b7124ec51c6d28.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.3.0\8a62fd16fcc1c06f284fc98e6cbded2a5af1dd4c\bolts-tasks-1.3.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8a62fd16fcc1c06f284fc98e6cbded2a5af1dd4c">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.3.0-a838ae36085859d52b513da663fdcbd88868ca65.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-87799b0189f5f8e5d0bb51fe28338cc8d6eba3bf.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-595cdd3c9d56de6d80958cf3974a817e10a45b73.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-25573859f5469c40476e578431951d444bbbdbfe.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.3.0\bc535105332645408ef5f1380215cc954b842178\bolts-applinks-1.3.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="bc535105332645408ef5f1380215cc954b842178">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.3.0-c998c918f53a81b8d9973a5449ccb4fb54a1d3f5.jar" />
+    </item>
+
+</items>
