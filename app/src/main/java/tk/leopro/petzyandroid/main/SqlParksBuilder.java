@@ -13,7 +13,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import troll.Fragments.Interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import troll.Fragments.Utilities.UtilitiesFactory;
 import tk.leopro.petzyandroid.pojo.Park;
 

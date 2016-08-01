@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import troll.Fragments.Interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import troll.Fragments.Utilities.UtilitiesFactory;
 import tk.leopro.petzyandroid.adapters.CustomListAdapter;
 import tk.leopro.petzyandroid.pojo.Park;

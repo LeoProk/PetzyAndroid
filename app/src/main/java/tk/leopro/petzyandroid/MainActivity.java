@@ -35,7 +35,7 @@ import android.widget.ListView;
 
 import tk.leopro.petzyandroid.main.AppFactory;
 import tk.leopro.petzyandroid.Fragments.NewsFragment;
-import troll.Fragments.Interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import troll.Fragments.UserInterface.UIFactory;
 import troll.Fragments.Utilities.UtilitiesFactory;
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements ConnectionCallbac
         //Build google play service and get current location
         buildGoogleApiClient();
         //Create news Fragment
-        UtilitiesFactory.addFragment(this, new NewsFragment(), AppController.mFragmentTag, true).doTask();
+        UtilitiesFactory.addFragment(this, new NewsFragment(), AppController.fragmentTag, true).doTask();
         AppFactory.buildSQLParksData(this).doTask();
 
     }

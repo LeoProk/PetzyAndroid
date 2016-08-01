@@ -9,7 +9,7 @@ import com.google.android.gms.maps.GoogleMap;
 import tk.leopro.petzyandroid.AppSpecific.ParkListMaker;
 import tk.leopro.petzyandroid.AppSpecific.ParkMapMaker;
 import tk.leopro.petzyandroid.AppSpecific.SqlParksBuilder;
-import troll.Fragments.Interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 
 /**
  * Factory for app specifics
