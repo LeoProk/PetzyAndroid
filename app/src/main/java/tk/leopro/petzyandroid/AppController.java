@@ -10,9 +10,12 @@ import com.firebase.client.Firebase;
  */
 public class AppController extends Application {
 
-    public static String fragmentTag = "news";
-    public static Location currentLocation;
-
+    //fragment tag control
+    public String fragmentTag;
+    //the current users location
+    public static Location sCurrentLocation;
+    //the timestamp of selected date in new item fragment
+    public String timestamp;
 
     @Override
     public void onCreate() {

@@ -55,7 +55,7 @@ public class Park implements Comparable {
         Location parkLocation = new Location("Park Location");
         parkLocation.setLatitude(Double.parseDouble(mLat));
         parkLocation.setLongitude(Double.parseDouble(mLng));
-        int distance = Math.round(AppController.currentLocation.distanceTo(parkLocation));
+        int distance = Math.round(AppController.sCurrentLocation.distanceTo(parkLocation));
 
         return distance;
 

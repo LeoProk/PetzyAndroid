@@ -158,9 +158,9 @@ final class CustomDrawer implements FactoryInterface {
         //Change to clicked Fragment
         if (((MainActivity) mContext).getFragmentManager().findFragmentByTag(tag) == null) {
             AppController.fragmentTag = tag;
-            troll.Fragments.Utilities.UtilitiesFactory.addFragment(mContext, fragment, tag, true).doTask();
+            UtilitiesFactory.addFragment(mContext, fragment, tag, true).doTask();
         } else {
-            troll.Fragments.Utilities.UtilitiesFactory.switchFragments(mContext, tag).doTask();
+            UtilitiesFactory.switchFragments(mContext, tag).doTask();
         }
         mDrawerLayout.closeDrawer(mDrawerList);
     }

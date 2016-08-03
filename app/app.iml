@@ -115,8 +115,8 @@
     <orderEntry type="library" exported="" name="support-v4-23.0.0" level="project" />
     <orderEntry type="library" exported="" name="gson-2.6.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-auth-9.0.0" level="project" />
-    <orderEntry type="library" exported="" name="jackson-core-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="adapter-rxjava-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="jackson-core-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="jackson-databind-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="design-23.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-auth-base-9.0.0" level="project" />

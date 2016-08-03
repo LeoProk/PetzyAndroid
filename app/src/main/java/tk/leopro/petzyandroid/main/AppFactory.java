@@ -2,13 +2,11 @@ package tk.leopro.petzyandroid.main;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.view.View;
 import android.widget.ListView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.maps.GoogleMap;
-
-import tk.leopro.petzyandroid.AppSpecific.ParkListMaker;
-import tk.leopro.petzyandroid.AppSpecific.ParkMapMaker;
-import tk.leopro.petzyandroid.AppSpecific.SqlParksBuilder;
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 
 /**
@@ -33,5 +31,30 @@ public class AppFactory {
     //Create markers on google maps
     public static FactoryInterface createMarkers(GoogleMap googleMap,Context context) {
         return new ParkMapMaker(googleMap,context);
+    }
+    // show pop up message when title text view is missing
+    public static FactoryInterface titlePopUp(View view ,Context context) {
+        return new PopUpGenerator(view,context,"title");
+    }
+    // show pop up message when address text view is missing
+    public static FactoryInterface addressPopUp(View view ,Context context) {
+        return new PopUpGenerator(view,context,"address");
+    }
+    // show pop up message when phone text view is missing
+    public static FactoryInterface phonePopUp(View view ,Context context) {
+        return new PopUpGenerator(view,context,"phone");
+    }
+    // show pop up message when info text view is missing
+    public static FactoryInterface infoPopUp(View view ,Context context) {
+        return new PopUpGenerator(view,context,"info");
+    }
+    // show pop up message when subject option is missing
+    public static FactoryInterface subjectPopUp(View view ,Context context) {
+        return new PopUpGenerator(view,context,"subject");
+    }
+    //gets data from firebase server
+    public static FactoryInterface getLogInPopup(View anchorView, Context context,FactoryInterface factoryInterface,
+                                                 GoogleSignInOptions gso){
+        return new LogInPopup(anchorView,context,factoryInterface,gso);
     }
 }

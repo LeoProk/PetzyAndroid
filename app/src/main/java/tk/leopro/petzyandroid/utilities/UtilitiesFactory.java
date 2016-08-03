@@ -17,6 +17,7 @@ package tk.leopro.petzyandroid.utilities;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
@@ -25,7 +26,6 @@ import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.pojo.Park;
-import troll.Fragments.Utilities.*;
 
 /**
  * Factory for network statues , retrieving files , saving and appending new files.
@@ -102,4 +102,8 @@ public class UtilitiesFactory {
     public static FactoryInterface callSQL(Context context, List<Park> parks, String saveRetrieveUpdate) {
         return new SQLDatabase(context, parks, saveRetrieveUpdate);
     }
+    //Change the tabs of main tab layout
+    public static FactoryInterface createTabs(Context context, TabLayout tabLayout, String[] tabNames, String[] tags) {
+            return new TabMaker(context, tabLayout, tabNames, tags);
+        }
 }
