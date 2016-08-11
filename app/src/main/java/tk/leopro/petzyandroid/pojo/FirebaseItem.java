@@ -10,7 +10,6 @@ public class FirebaseItem implements Comparable {
 
     //make sure that our field names match the names of the properties
     // in the Firebase database
-    private String timeStamp;
     private String address;
     private String title;
     private String user;
@@ -22,21 +21,14 @@ public class FirebaseItem implements Comparable {
     public FirebaseItem(){
         // empty default constructor, necessary for Firebase to be able to deserialize blog posts
     }
-    public FirebaseItem( String date,String address, String title,String user
+    public FirebaseItem(String address, String title,String user
             , Location location,String image){
-        this.timeStamp = date;
         this.address = address;
         this.title = title;
         this.user = user;
         this.location = location;
         this.image = image;
     }
-
-
-    public String getTimeStamp() {
-        return timeStamp;
-    }
-
     public String getAddress() {
         return address;
     }

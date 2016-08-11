@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
-import troll.Fragments.Utilities.UtilitiesFactory;
 import tk.leopro.petzyandroid.pojo.Park;
+import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
 
 /**
  * Created by Leo on 10/10/2015.

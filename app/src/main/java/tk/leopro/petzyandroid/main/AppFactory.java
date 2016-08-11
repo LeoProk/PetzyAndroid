@@ -8,6 +8,7 @@ import android.widget.ListView;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.maps.GoogleMap;
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.pojo.FirebaseItem;
 
 /**
  * Factory for app specifics
@@ -56,5 +57,9 @@ public class AppFactory {
     public static FactoryInterface getLogInPopup(View anchorView, Context context,FactoryInterface factoryInterface,
                                                  GoogleSignInOptions gso){
         return new LogInPopup(anchorView,context,factoryInterface,gso);
+    }
+    // create new fire base entry
+    public static FactoryInterface saveNewPark(FirebaseItem newItem){
+        return new SaveNewPark(newItem);
     }
 }

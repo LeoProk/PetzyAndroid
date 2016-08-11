@@ -45,7 +45,6 @@ final class ParkListMaker implements FactoryInterface {
     public Object doTask() {
 
         List<Park> parksList = new ArrayList();
-        parksList.add(new Park("uau","ftp://a4795062:12345@leopro.tk/dna/sig.png","yay","0","0"));
         UtilitiesFactory.callSQL(mContext, parksList, "retrieve").doTask();
         Collections.sort(parksList);
         FragmentActivity activity = (FragmentActivity) mContext;

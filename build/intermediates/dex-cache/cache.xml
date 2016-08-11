@@ -2,109 +2,249 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.0\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-2e5f0b28b7b32e4a02e2c95ed625c6d9c294ecf6.jar" />
+        revision="23.0.3"
+        sha1="1941832901fc4e7a93300b53762e9f65d7650b99">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.0.0_4f41f9a42523ccadca5fdb715aef338ebd28edc2.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.0.0\jars\libs\internal_impl-23.0.0.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-6e2dbdeaa624823b7c2623a82f879215d4b38ceb.jar" />
+        revision="23.0.3"
+        sha1="5d4bccb885c8a89d066ecb6c4addb553a99a79a2">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0_1309b71d07b52f16b055969d3ba017c7391f77d2.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\22.2.0\jars\classes.jar"
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.2.1\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="9aa93835393824b436f366120c9ba8a0260ce75d">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-14aa24dc341038fab3aff5f5eed167b0f530ee5d.jar" />
+        revision="23.0.3"
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.2.1_8097403decd7121013283df7c1003993db3a0edd.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.8.0\jars\classes.jar"
+        jar="C:\Users\Leo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-a3014066da8307fc4cb41f1838bc9306706de33d.jar" />
+        revision="23.0.3"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0_be12fdd001f5a464ff0398cbfdf36a2831144100.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.0.0\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-1aa2c77c6b75b3f6cdb2b749749faeac28e1f619.jar" />
+        revision="23.0.3"
+        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-9.0.0_5925fba9c2f241b12a9410bb1d88875d67958ad8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.firebase\firebase-client-jvm\2.5.0\c0af904657634f7ab9cc21e75d80250570033321\firebase-client-jvm-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c0af904657634f7ab9cc21e75d80250570033321">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\firebase-client-jvm-2.5.0_1c98091ce3a660b3191270b84c301c921a2d30a2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.2\f1bc476cc167b18e66c297df599b2377131a8947\gson-2.6.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\gson-2.6.2_a18ce5b588c75fa1f05b3db2be92bade9896753f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="42df48c7305b08b14fa0e84561091b0c24d70d26">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-9.0.0_90ffb0e7bbe26b50c26152973fa773eefab5365d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="bb0ac3f3ee2d71854501cc28e52cc84a20209b41">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-v13-23.0.0_5460c62edb7f018e92b4fe9e104fd30cc460c1cc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="cc178928721f3222b3b06bdfbd9497378ccb9792">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-9.0.0_a77a9b62b85e0db624f28feb65b5600c3ad404e5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\okio-1.8.0_9285fe99e602e81526cdc7787cdec4efbb51949a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.firebase\firebase-client-android\2.5.0\7d0473896b3b10b23a2f9812fec4316dff8afdd\firebase-client-android-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="07d0473896b3b10b23a2f9812fec4316dff8afdd">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\firebase-client-android-2.5.0_02d4063f1b677ec31beac10e59b90b71266b0357.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\9.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="59cca9b91688dc2467754d36793b3d23bebd21a9">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-9.0.0_3630a3bb5315a37c54f20a977c5e0ffd32fb0393.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.2.0\a56f28d5b7fab623c6c1d2afa08dd496d873ac21\logging-interceptor-3.2.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.2.0_56913102d8721ab4392006d11bd8541536c29625.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\design\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8a5238e4bdcd6568b82db669d41817de670586b8">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.0.0_e7885b308821715eb38cd462e49060fa5b640a6f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.2.2\285cb9c666f0f0f3dd8a1be04e1f457eb7b15113\jackson-annotations-2.2.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.2.2_65b2d6a01a67fa42438a91e0df4a1afb5e6f473b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\okhttp-3.3.0_7b7db2168ea381167db8d41ba38bbf229b9af81f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0_f56cad6b3b38847ec936f8f8eb4a5df2620c40bd.jar" />
     </item>
     <item
         jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\libs\Parse-1.9.4.jar"
         jumboMode="false"
-        revision="22.0.1"
+        revision="23.0.3"
         sha1="56c22930b5d4f77015b6a40c7f14103d3e101001">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\Parse-1.9.4-ec08ded8cf9327360c57af1b775531673ff39737.jar" />
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\Parse-1.9.4_ec08ded8cf9327360c57af1b775531673ff39737.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.2.2\3c8f6018eaa72d43b261181e801e6f8676c16ef6\jackson-databind-2.2.2.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="79a5b6d9fbab3b5fb4c6f86a1ed7a17722fd937b">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-fe8b5f3ab9cf7f4ed1e4b2aaf17460f3dfa8bb29.jar" />
+        revision="23.0.3"
+        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jackson-databind-2.2.2_287622bc0b566ec814a01a4c324eccb10bd61703.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.8.2\64238922c4006c3d0a9951c4c03983ecc6a1e1a0\jsoup-1.8.2.jar"
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.0.0\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="64238922c4006c3d0a9951c4c03983ecc6a1e1a0">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jsoup-1.8.2-c2626e0eb1e656707f20ffb96ab515232a2413e9.jar" />
+        revision="23.0.3"
+        sha1="a819aae4f0c711e50b4fd633922a3c1a176cb51e">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-9.0.0_3d619556552ea7537fef0e32e82894a975859bae.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.3.0\27cabf3558be23a89f054334dd92512645ad34d9\bolts-android-1.3.0.jar"
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.0\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="27cabf3558be23a89f054334dd92512645ad34d9">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\bolts-android-1.3.0-12a29c7f8af06ba610803225214a9ba8f3b0a132.jar" />
+        revision="23.0.3"
+        sha1="6f65c144283b31b4b9a70e6e7aa4c4a1c897d4b8">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-9.0.0_ad5057a111ccc352c2725dc7f5ff6e0d514d043d.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\jars\classes.jar"
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.1.0\693eddc23e87ab13f9cf5001707ce8e7e1d1ff01\adapter-rxjava-2.1.0.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-70f62ab53de8baf83c91813477b7124ec51c6d28.jar" />
+        revision="23.0.3"
+        sha1="693eddc23e87ab13f9cf5001707ce8e7e1d1ff01">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.1.0_9f53d7b6ce53c93e77c46a5c6847d02045f2fa9f.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.3.0\8a62fd16fcc1c06f284fc98e6cbded2a5af1dd4c\bolts-tasks-1.3.0.jar"
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="8a62fd16fcc1c06f284fc98e6cbded2a5af1dd4c">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.3.0-a838ae36085859d52b513da663fdcbd88868ca65.jar" />
+        revision="23.0.3"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_1d960789ee246c3f556fdb12cbc7d58c06b6fd69.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.6\2586312cd2b8a511e4c6236736f5a039fc0f2273\rxjava-1.1.6.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-87799b0189f5f8e5d0bb51fe28338cc8d6eba3bf.jar" />
+        revision="23.0.3"
+        sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\rxjava-1.1.6_007fded70589a0ee72f8c6aa31351d1ab3a6418a.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-595cdd3c9d56de6d80958cf3974a817e10a45b73.jar" />
+        revision="23.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_8ca823d15c7f9c3183ea8733bb19e868d5423704.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.8.0\jars\classes.jar"
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\classes-25573859f5469c40476e578431951d444bbbdbfe.jar" />
+        revision="23.0.3"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.0_21c550cb4698e3421aade62c478412fb3fe98c9c.jar" />
     </item>
     <item
-        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.3.0\bc535105332645408ef5f1380215cc954b842178\bolts-applinks-1.3.0.jar"
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.0.0\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="bc535105332645408ef5f1380215cc954b842178">
-        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.3.0-c998c918f53a81b8d9973a5449ccb4fb54a1d3f5.jar" />
+        revision="23.0.3"
+        sha1="7a23185c9b1c100e7d1a32275017e4712e31c796">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-auth-base-9.0.0_af718951d5bfe9015395bfeb2c9ae423e7e559d3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.7.2\d7e275ba05aa380ca254f72d0c0ffebaedc3adcf\jsoup-1.7.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d7e275ba05aa380ca254f72d0c0ffebaedc3adcf">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jsoup-1.7.2_55a34c9fe6c789be5a03793f7749665c29f2e9af.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-9.0.0_7ffd1b372db558ae9c6e56f9dd4bf50a10e8280e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.0_9f88c10615278c3a8fbd95a9e1eb085ba39c4578.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="7da84426d876216ed4cdddd85e739be5ecabdd04">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-auth-9.0.0_c8bd806679df75484197b55da79eab6985d52bbf.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-impl-9.0.0_77184fc8b1f1fb2485a964de3f4c37b55a4daa5f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.firebase\tubesock\0.0.12\6ec0bbd3e161a73ed672284b587fd32309a86d7a\tubesock-0.0.12.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6ec0bbd3e161a73ed672284b587fd32309a86d7a">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\tubesock-0.0.12_dc8202ce00cb15855fd6b80048267c3cf9c5b1d1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.2.2\d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b\jackson-core-2.2.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="C:\Users\Leo\AndroidStudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jackson-core-2.2.2_26b66f31563199809feb6f78d15ee82c6d6eebfd.jar" />
     </item>
 
 </items>

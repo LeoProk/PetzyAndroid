@@ -16,9 +16,6 @@
 
 package tk.leopro.petzyandroid.adapters;
 
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -28,22 +25,18 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.List;
-
-import tk.leopro.petzyandroid.AppController;
-import tk.leopro.petzyandroid.pojo.Park;
 import tk.leopro.petzyandroid.R;
+import tk.leopro.petzyandroid.pojo.FirebaseItem;
 
 public class CustomListAdapter extends BaseAdapter {
-
-    ImageLoader mImageLoader = AppController.getInstance().getImageLoader();
 
     private Activity mActivity;
 
     private LayoutInflater mInflater;
 
-    private List<Park> mParkItems;
+    private List<FirebaseItem> mParkItems;
 
-    public CustomListAdapter(Activity activity, List<Park> parksItems) {
+    public CustomListAdapter(Activity activity, List<FirebaseItem> parksItems) {
         mActivity = activity;
         mParkItems = parksItems;
     }
@@ -73,23 +66,15 @@ public class CustomListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.list_row, null);
         }
-
-        if (mImageLoader == null) {
-            mImageLoader = AppController.getInstance().getImageLoader();
-        }
-        NetworkImageView thumbNail = (NetworkImageView) convertView
-                .findViewById(R.id.thumbnail);
         TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView location = (TextView) convertView.findViewById(R.id.text);
 
         TextView length = (TextView) convertView.findViewById(R.id.length);
         // getting movie data for the row
-        Park park = mParkItems.get(position);
-
-        thumbNail.setImageUrl(park.getThumbnailUrl(), mImageLoader);
+        FirebaseItem park = mParkItems.get(position);
         title.setText(park.getTitle());
-        location.setText(park.getText());
-        length.setText(park.getLength());
+        location.setText(park.getTitle());
+        //length.setText(park.getLocation());
 
         return convertView;
     }

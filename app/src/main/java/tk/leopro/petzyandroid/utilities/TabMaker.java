@@ -16,7 +16,6 @@ import tk.leopro.petzyandroid.fragments.ParksMap;
 import tk.leopro.petzyandroid.fragments.VetsClosest;
 import tk.leopro.petzyandroid.fragments.VetsMap;
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
-import troll.Fragments.Utilities.UtilitiesFactory;
 
 /**
  * This Class create add tabs and on tab click.
@@ -70,8 +69,10 @@ final class TabMaker implements FactoryInterface {
                         break;
                 }
                 if (activity.getFragmentManager().findFragmentByTag(mTag) == null) {
-                    AppController.fragmentTag = mTag;
-                    troll.Fragments.Utilities.UtilitiesFactory.addFragment(mContext, mFragment, mTag, true).doTask();
+                    //gets the application class
+                    final AppController appController = (AppController) mContext.getApplicationContext();
+                    appController.fragmentTag = mTag;
+                    UtilitiesFactory.addFragment(mContext, mFragment, mTag, true).doTask();
                 } else {
                     UtilitiesFactory.switchFragments(mContext, mTag).doTask();
                 }

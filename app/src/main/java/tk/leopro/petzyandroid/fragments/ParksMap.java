@@ -25,7 +25,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.MapView;
 
 import tk.leopro.petzyandroid.R;
-import troll.Fragments.UserInterface.UIFactory;
+import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
 
 /**
  * Show the closest  parks near you
@@ -42,7 +42,7 @@ public class ParksMap extends Fragment {
         // Gets the MapView from the XML layout and creates it
         mMapView = (MapView) rootView.findViewById(R.id.parks_map);
         mMapView.onCreate(savedInstanceState);
-        UIFactory.getMap(getActivity(), mMapView).doTask();
+        UtilitiesFactory.getCustomMap(getActivity(), mMapView).doTask();
         return rootView;
     }
 

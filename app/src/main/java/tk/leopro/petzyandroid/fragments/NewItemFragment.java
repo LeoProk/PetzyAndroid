@@ -58,7 +58,7 @@ public class NewItemFragment extends Fragment implements OnDateCompleted {
     //auto comeplete address
     private AutoCompleteTextView mAddress;
     //location of the chosen street address
-    private Location mChosenLocation;
+    private tk.leopro.petzyandroid.pojo.Location mChosenLocation;
     //subscribtion for google place prediction
     private Subscription mSubscription;
 
@@ -141,12 +141,6 @@ public class NewItemFragment extends Fragment implements OnDateCompleted {
                         });
             }
         });
-        //array of spinner items
-        final String[] menuTitles = getActivity().getResources().getStringArray(R.array.spinner_titles);
-        //creates and sets spinner adapter
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_spinner_dropdown_item, menuTitles);
-        //on submit button click
         final Button submit = (Button) rootView.findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,9 +165,8 @@ public class NewItemFragment extends Fragment implements OnDateCompleted {
         //change fragment
        //save to firebase after creating hashmap of the new items array list
         FirebaseItem itemForSave = new FirebaseItem(mAddress.getText().toString()
-                ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask(),mChosenLocation
-                ,appController.timestamp,"null");
-        AppFactory.saveFireBase(itemForSave).doTask();
+                ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask(),mChosenLocation ,"null");
+        AppFactory.saveNewPark(itemForSave).doTask();
         UtilitiesFactory.removeFragment(getActivity()).doTask();
     }
 }

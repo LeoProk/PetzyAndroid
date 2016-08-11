@@ -22,6 +22,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
+import com.google.android.gms.maps.MapView;
+
 import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
@@ -106,4 +108,8 @@ public class UtilitiesFactory {
     public static FactoryInterface createTabs(Context context, TabLayout tabLayout, String[] tabNames, String[] tags) {
             return new TabMaker(context, tabLayout, tabNames, tags);
         }
+    //create map and show current user location
+    public static FactoryInterface getCustomMap(Context context,MapView mapView){
+        return new CustomMap(context,mapView);
+    }
 }

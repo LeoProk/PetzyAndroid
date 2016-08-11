@@ -15,6 +15,8 @@
     <string name="other">Other</string>
     <string name="closest">Closest</string>
     <string name="map">Map</string>
+    <string name="address">כתובת</string>
+    <string name="title">כותרת</string>
     <string name="wrong_title">שדה הכותרת הוא חובה.</string>
     <string name="wrong_address">שדה הכתובת הוא חובה.</string>
     <string name="wrong_phone">שדה המס טלפון הוא חובה.</string>

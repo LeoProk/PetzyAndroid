@@ -25,6 +25,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.pojo.FirebaseItem;
 import tk.leopro.petzyandroid.pojo.Park;
 
 /**
@@ -43,11 +44,11 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
     private static final int DATABASE_VERSION = 1;
 
     //List of contacts that much the parse database
-    List<Park> mParks;
+    List<FirebaseItem> mParks;
 
     private String mSaveRetrieveUpdate;
 
-    public SQLDatabase(Context context, List<Park> parks, String command) {
+    public SQLDatabase(Context context, List<FirebaseItem> parks, String command) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         mSaveRetrieveUpdate = command;
         mParks = parks;
@@ -92,7 +93,7 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
     }
 
     // Getting All Contacts
-    public List<Park> getAllContacts() {
+    public List<FirebaseItem> getAllContacts() {
         // Select All Query
         String selectQuery = "SELECT  * FROM " + TABLE_CONTACTS;
 
@@ -103,7 +104,7 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
         if (cursor.moveToFirst()) {
             do {
                 String userInfo[] = cursor.getString(1).split("\n");
-                Park park = new Park(userInfo[0], userInfo[1], userInfo[2], userInfo[3], userInfo[4]);
+                FirebaseItem park = new FirebaseItem(userInfo[0], userInfo[1], userInfo[2], userInfo[3], userInfo[4]);
                 mParks.add(park);
             } while (cursor.moveToNext());
         }
