@@ -98,7 +98,8 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
             // options specified by gso.
         }
         buildGoogleApi();
-        AppFactory.buildSQLParksData(this).doTask();
+        UtilitiesFactory.addFragment(this,new ParksClosest(),"park",true).doTask();
+        //AppFactory.buildSQLParksData(this).doTask();
     }
 
 

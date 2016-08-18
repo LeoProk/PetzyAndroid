@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
-import tk.leopro.petzyandroid.pojo.Park;
+import tk.leopro.petzyandroid.pojo.FirebaseItem;
 import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
 
 /**
@@ -31,14 +31,14 @@ final class ParkMapMaker implements FactoryInterface {
 
     @Override
     public Object doTask() {
-        List<Park> parksList = new ArrayList();
-        UtilitiesFactory.callSQL(mContext, parksList, "retrieve").doTask();
+/*        List<FirebaseItem> parksList = new ArrayList();
+        UtilitiesFactory.callSQL(mContext, , "retrieve").doTask();
         for (int i = 0; i < parksList.size() ; i++) {
             mMap.addMarker(new MarkerOptions()
                     .position(parksList.get(i).getLatLng())
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        }
+        }*/
 
         return null;
     }

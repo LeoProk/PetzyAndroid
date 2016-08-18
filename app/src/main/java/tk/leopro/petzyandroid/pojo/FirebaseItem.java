@@ -14,6 +14,7 @@ public class FirebaseItem implements Comparable {
     private String title;
     private String user;
     private String image;
+    private String camera;
     private Location location;
 /*    //the distance of the item location and current location
     private int mDistance;*/
@@ -31,6 +32,10 @@ public class FirebaseItem implements Comparable {
     }
     public String getAddress() {
         return address;
+    }
+
+    public String getCamera() {
+        return camera;
     }
 
     public String getTitle() {
@@ -66,4 +71,12 @@ public class FirebaseItem implements Comparable {
         return distance - comparedPark;
     }
 
+    public String thumbnailUrl(String postedBy){
+        if(postedBy.equals("system_google_map")){
+            return "https://maps.googleapis.com/maps/api/streetview?size=400x400&location="+location.getLat()+","+location.getLng() +
+                    getCamera() + "&key=" + "AIzaSyDGTKCSCY_lpKtVrA1bJYctJdrJhjzGMlE";
+        }else{
+            return image;
+        }
+    }
 }

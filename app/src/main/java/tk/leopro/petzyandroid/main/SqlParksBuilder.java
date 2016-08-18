@@ -16,6 +16,7 @@ import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.pojo.FirebaseItem;
@@ -38,15 +39,16 @@ final class SqlParksBuilder implements FactoryInterface {
     public Object doTask() {
         final ArrayList firebaseItems = new ArrayList<>();
         // Get a reference to firebase database
-        final Firebase ref = new Firebase("https://luminous-fire-5859.firebaseio.com/input");
+        final Firebase ref = new Firebase("https://petzy-1001.firebaseio.com/input");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     firebaseItems.add(postSnapshot.getValue(FirebaseItem.class));
                 }
+                Collections.sort(firebaseItems);
 
-                UtilitiesFactory.callSQL(mContext, firebaseItems, "save").doTask();
+                //UtilitiesFactory.callSQL(mContext, firebaseItems, "save").doTask();
             }
 
             @Override
@@ -56,7 +58,7 @@ final class SqlParksBuilder implements FactoryInterface {
         });
         //mParksList.add(new Park(finalParks[0], linkStreetView(finalParks[2], finalParks[3], finalParks[4]), finalParks[1], finalParks[2], finalParks[3]));
 
-        return null;
+        return firebaseItems;
     }
 
     private String linkStreetView(String lat, String lng, String imageSettings) {

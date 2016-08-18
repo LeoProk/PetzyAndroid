@@ -17,7 +17,14 @@ package tk.leopro.petzyandroid.main;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.ListView;
+
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.Query;
+import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,8 +32,7 @@ import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.adapters.CustomListAdapter;
-import tk.leopro.petzyandroid.pojo.Park;
-import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
+import tk.leopro.petzyandroid.pojo.FirebaseItem;
 
 /**
  * Retrieve data from sql and put it in list view adapter
@@ -43,13 +49,25 @@ final class ParkListMaker implements FactoryInterface {
 
     @Override
     public Object doTask() {
-
-        List<Park> parksList = new ArrayList();
-        UtilitiesFactory.callSQL(mContext, parksList, "retrieve").doTask();
-        Collections.sort(parksList);
+        Log.e("yay","YYYAYY");
+        final ArrayList<FirebaseItem> parksList = new ArrayList();
         FragmentActivity activity = (FragmentActivity) mContext;
-        CustomListAdapter adapter = new CustomListAdapter(activity, parksList);
-        mListView.setAdapter(adapter);
+        final CustomListAdapter adapter = new CustomListAdapter(activity, parksList);
+        final Firebase ref = new Firebase("https://petzy-1001.firebaseio.com/input");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    parksList.add(postSnapshot.getValue(FirebaseItem.class));
+                }
+                Collections.sort(parksList);
+                mListView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+            }
+        });
         return null;
 
 

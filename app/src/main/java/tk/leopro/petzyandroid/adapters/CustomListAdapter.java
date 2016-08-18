@@ -22,11 +22,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+
+import java.util.ArrayList;
+
+import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.R;
 import tk.leopro.petzyandroid.pojo.FirebaseItem;
+
+
+/**
+ * base adapter for list view of items
+ * the item info is taken from firebase servers in pojo
+ */
 
 public class CustomListAdapter extends BaseAdapter {
 
@@ -34,21 +46,24 @@ public class CustomListAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
 
-    private List<FirebaseItem> mParkItems;
+    private ArrayList<FirebaseItem> mFirebaseItems;
 
-    public CustomListAdapter(Activity activity, List<FirebaseItem> parksItems) {
+    private ImageLoader mImageLoader;
+
+    public CustomListAdapter(Activity activity, ArrayList<FirebaseItem> firebaseItem) {
         mActivity = activity;
-        mParkItems = parksItems;
+        mFirebaseItems = firebaseItem;
     }
+
 
     @Override
     public int getCount() {
-        return mParkItems.size();
+        return mFirebaseItems.size();
     }
 
     @Override
     public Object getItem(int location) {
-        return mParkItems.get(location);
+        return mFirebaseItems.get(location);
     }
 
     @Override
@@ -59,24 +74,36 @@ public class CustomListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if (mInflater == null) {
+        if (mInflater == null)
             mInflater = (LayoutInflater) mActivity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        }
-        if (convertView == null) {
+        if (convertView == null)
             convertView = mInflater.inflate(R.layout.list_row, null);
+        if (mImageLoader == null) {
+            mImageLoader = AppController.getInstance().getImageLoader();
         }
-        TextView title = (TextView) convertView.findViewById(R.id.title);
-        TextView location = (TextView) convertView.findViewById(R.id.text);
-
-        TextView length = (TextView) convertView.findViewById(R.id.length);
-        // getting movie data for the row
-        FirebaseItem park = mParkItems.get(position);
-        title.setText(park.getTitle());
-        location.setText(park.getTitle());
-        //length.setText(park.getLocation());
-
+        NetworkImageView thumbNail = (NetworkImageView) convertView
+                .findViewById(R.id.thumbnail);
+        final TextView title = (TextView) convertView.findViewById(R.id.title);
+        final TextView address = (TextView) convertView.findViewById(R.id.address);
+        final TextView length = (TextView) convertView.findViewById(R.id.length);
+        // getting item data for the row
+        final FirebaseItem firebaseItem = mFirebaseItems.get(position);
+        thumbNail.setImageUrl(firebaseItem.thumbnailUrl(firebaseItem.getUser()), mImageLoader);
+        address.setText(firebaseItem.getAddress());
+        title.setText(firebaseItem.getTitle());
+        length.setText(distanceInKM(firebaseItem.calculateDistance()));
         return convertView;
     }
-
+    //return string distance in meter or kelometres
+    private String distanceInKM(int parkDistance) {
+        String range;
+        if (parkDistance < 1000) {
+            range = "מטרים";
+        } else {
+            range = "קילומטרים";
+            parkDistance = parkDistance / 1000;
+        }
+        return String.valueOf(parkDistance) + " " + range;
+    }
 }

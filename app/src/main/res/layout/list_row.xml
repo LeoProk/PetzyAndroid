@@ -4,21 +4,25 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_row_selector">
 
-
     <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/thumbnail"
             android:layout_width="fill_parent"
             android:layout_height="350dp"
             android:layout_marginTop="20dp"/>
 
-    <TextView
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
             android:id="@+id/length"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="400dp"
             android:padding="8dp"/>
 
-    <TextView
+        <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,17 +31,18 @@
             android:padding="8dp"
             android:textStyle="bold"/>
 
-    <TextView
-            android:id="@+id/text"
+        <TextView
+            android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginTop="420dp"
             android:padding="8dp"/>
 
-    <Space
+        <Space
             android:layout_width="fill_parent"
             android:layout_height="30dp"
             android:layout_marginTop="430dp"/>
 
+    </RelativeLayout>
 </RelativeLayout>

@@ -37,7 +37,7 @@ public class ParksClosest extends Fragment {
         final View rootView = inflater.inflate(R.layout.parks_closest_fragment, container, false);
         //call list view and populate it
         final ListView parkList = (ListView) rootView.findViewById(R.id.closeByParks);
-        AppFactory.getParksList(getActivity(), parkList).doTask();
+        AppFactory.getParksListMaker(getActivity(), parkList).doTask();
         return rootView;
     }
 }

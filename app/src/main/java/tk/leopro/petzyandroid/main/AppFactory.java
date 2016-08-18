@@ -21,7 +21,7 @@ public class AppFactory {
     }
 
     //Create list of park with data taken from parse database
-    public static FactoryInterface getParksList(Context context, ListView listView) {
+    public static FactoryInterface getParksListMaker(Context context, ListView listView) {
         return new ParkListMaker(context, listView);
     }
 

@@ -26,7 +26,6 @@ import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.pojo.FirebaseItem;
-import tk.leopro.petzyandroid.pojo.Park;
 
 /**
  * Creates new database and save the matching contracts there.
@@ -104,8 +103,8 @@ final class SQLDatabase extends SQLiteOpenHelper implements FactoryInterface {
         if (cursor.moveToFirst()) {
             do {
                 String userInfo[] = cursor.getString(1).split("\n");
-                FirebaseItem park = new FirebaseItem(userInfo[0], userInfo[1], userInfo[2], userInfo[3], userInfo[4]);
-                mParks.add(park);
+                //FirebaseItem park = new FirebaseItem(userInfo[0], userInfo[1], userInfo[2], userInfo[3], userInfo[4]);
+                //mParks.add(park);
             } while (cursor.moveToNext());
         }
 

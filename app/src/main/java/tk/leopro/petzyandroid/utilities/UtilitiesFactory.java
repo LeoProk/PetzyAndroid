@@ -27,7 +27,7 @@ import com.google.android.gms.maps.MapView;
 import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
-import tk.leopro.petzyandroid.pojo.Park;
+import tk.leopro.petzyandroid.pojo.FirebaseItem;
 
 /**
  * Factory for network statues , retrieving files , saving and appending new files.
@@ -101,7 +101,7 @@ public class UtilitiesFactory {
     }
 
     //Uses SQLite database with update save or retrieve commands
-    public static FactoryInterface callSQL(Context context, List<Park> parks, String saveRetrieveUpdate) {
+    public static FactoryInterface callSQL(Context context, List<FirebaseItem> parks, String saveRetrieveUpdate) {
         return new SQLDatabase(context, parks, saveRetrieveUpdate);
     }
     //Change the tabs of main tab layout
