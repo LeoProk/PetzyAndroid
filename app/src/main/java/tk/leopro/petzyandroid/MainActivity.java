@@ -40,6 +40,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import tk.leopro.petzyandroid.fragments.ParksClosest;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
         mDrawerToggle = (ActionBarDrawerToggle) UtilitiesFactory.getDrawer(this, mDrawerLayout, drawerList, toolbar).doTask();
         //Create tabs
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        mTabLayout.setVisibility(View.GONE);
         //check if the user sign in to the app before
         mGso = null;
         if(((String)UtilitiesFactory.getFile(this,"user").doTask()).isEmpty()) {

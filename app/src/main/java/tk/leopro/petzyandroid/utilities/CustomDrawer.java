@@ -35,6 +35,7 @@ import tk.leopro.petzyandroid.adapters.DrawerAdapter;
 import tk.leopro.petzyandroid.fragments.AdoptionTips;
 import tk.leopro.petzyandroid.fragments.DogsAdopting;
 import tk.leopro.petzyandroid.fragments.Lost;
+import tk.leopro.petzyandroid.fragments.NewParkFragment;
 import tk.leopro.petzyandroid.fragments.ParksClosest;
 import tk.leopro.petzyandroid.fragments.VetsClosest;
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
@@ -121,6 +122,10 @@ final class CustomDrawer implements FactoryInterface {
         // set the search value for item list fragments
         switch (position) {
             case 0:
+                tag = "new";
+                fragment = new NewParkFragment();
+                break;
+           /* case 0:
                 tag = "dog";
                 fragment = new DogsAdopting();
                 tabName = new String[]{mContext.getResources().getString(R.string.dogs), mContext.getResources().getString(R.string.cats), mContext.getResources().getString(R.string.other)};
@@ -147,7 +152,7 @@ final class CustomDrawer implements FactoryInterface {
                 fragment = new VetsClosest();
                 tabName = new String[]{mContext.getResources().getString(R.string.closest), mContext.getResources().getString(R.string.map)};
                 tabTags = new String[]{"vetNear", "vetMap"};
-                break;
+                break;*/
             default:
                 break;
         }

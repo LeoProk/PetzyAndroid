@@ -18,7 +18,7 @@ final class SaveNewPark implements FactoryInterface {
 
     @Override
     public Object doTask() {
-        Firebase myFirebaseRef = new Firebase("https://luminous-fire-5859.firebaseio.com/");
+        Firebase myFirebaseRef = new Firebase("https://petzy-1001.firebaseio.com/");
         Firebase postRef = myFirebaseRef.child("input");
         Firebase newPostRef = postRef.push();
         newPostRef.setValue(mFirebaseItem);

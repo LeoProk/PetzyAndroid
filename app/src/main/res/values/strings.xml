@@ -26,11 +26,11 @@
     <string name="cancel">ביטול</string>
     <string name="login">אנא התחבר על מנת להמשיך</string>
     <string-array name="titles">
-        <item>Adopt</item>
-        <item>Lost Found</item>
+        <item>הוסף פארק</item>
+<!--        <item>Lost Found</item>
         <item>Tips</item>
         <item>Parks</item>
-        <item>Veterinars</item>
+        <item>Veterinars</item>-->
     </string-array>
 
     <string-array name="icons">

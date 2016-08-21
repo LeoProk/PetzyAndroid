@@ -49,7 +49,6 @@ final class ParkListMaker implements FactoryInterface {
 
     @Override
     public Object doTask() {
-        Log.e("yay","YYYAYY");
         final ArrayList<FirebaseItem> parksList = new ArrayList();
         FragmentActivity activity = (FragmentActivity) mContext;
         final CustomListAdapter adapter = new CustomListAdapter(activity, parksList);
