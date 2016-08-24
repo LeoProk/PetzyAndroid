@@ -23,6 +23,7 @@ import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import tk.leopro.petzyandroid.AppController;
+import tk.leopro.petzyandroid.MainActivity;
 import tk.leopro.petzyandroid.R;
 import tk.leopro.petzyandroid.interfaces.RequestPlaceInterface;
 import tk.leopro.petzyandroid.main.AppFactory;
@@ -57,6 +58,7 @@ public class NewParkFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_new_item, container, false);
         //get the application class
         final AppController appController = (AppController) getActivity().getApplicationContext();
+        appController.imageUrl = "null";
         //initializes views
         mTitle = (EditText) rootView.findViewById(R.id.title);
         mAddress  = (AutoCompleteTextView) rootView.findViewById(R.id.address);
@@ -70,6 +72,7 @@ public class NewParkFragment extends Fragment {
                 mChosenLocation = predictedLocation.get(position);
             }
         });
+        ((MainActivity)getActivity()).pickImage();
         //get info from google place prediction using rxandroid and retrofit
         RxJavaCallAdapterFactory rxAdapter = RxJavaCallAdapterFactory.create();
         final Retrofit retrofit = new Retrofit.Builder()
@@ -144,7 +147,8 @@ public class NewParkFragment extends Fragment {
                         //change fragment
                         //save to firebase after creating hashmap of the new items array list
                         FirebaseItem itemForSave = new FirebaseItem(mAddress.getText().toString()
-                                ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask(),mChosenLocation ,"null");
+                                ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask()
+                                ,mChosenLocation ,appController.imageUrl);
                         AppFactory.saveNewPark(itemForSave).doTask();
                         UtilitiesFactory.removeFragment(getActivity()).doTask();
                     }

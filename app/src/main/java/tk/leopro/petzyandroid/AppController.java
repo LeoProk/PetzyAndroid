@@ -8,7 +8,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-import com.firebase.client.Firebase;
 
 import tk.leopro.petzyandroid.pojo.LruBitmapCache;
 
@@ -20,12 +19,16 @@ public class AppController extends Application {
     public static final String TAG = AppController.class.getSimpleName();
     //fragment tag control
     public String fragmentTag;
+    //user uploaded image patch
+    public String imageUrl;
     //the current users location
     public static Location sCurrentLocation;
     //the timestamp of selected date in new item fragment
     public String timestamp;
     private static AppController sInstance;
+
     private RequestQueue mRequestQueue;
+
     private ImageLoader mImageLoader;
 
     // code needed for volly api
@@ -36,7 +39,7 @@ public class AppController extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Firebase.setAndroidContext(this);
+        //Firebase.setAndroidContext(this);
         sInstance = this;
     }
 

@@ -20,15 +20,14 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.ListView;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.Query;
-import com.firebase.client.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.adapters.CustomListAdapter;
@@ -52,7 +51,8 @@ final class ParkListMaker implements FactoryInterface {
         final ArrayList<FirebaseItem> parksList = new ArrayList();
         FragmentActivity activity = (FragmentActivity) mContext;
         final CustomListAdapter adapter = new CustomListAdapter(activity, parksList);
-        final Firebase ref = new Firebase("https://petzy-1001.firebaseio.com/input");
+        final DatabaseReference ref = FirebaseDatabase.getInstance()
+                .getReferenceFromUrl(("https://petzy-1001.firebaseio.com/input"));
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -64,8 +64,10 @@ final class ParkListMaker implements FactoryInterface {
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(DatabaseError databaseError) {
+
             }
+
         });
         return null;
 

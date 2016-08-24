@@ -28,11 +28,19 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.Places;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.location.Location;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -43,6 +51,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 import tk.leopro.petzyandroid.fragments.ParksClosest;
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.main.AppFactory;
@@ -72,6 +84,11 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
     private PopupWindow mLogInPopup;
 
     private static final int RC_SIGN_IN = 1000;
+
+    private static final int REQUEST_GALLERY = 1;
+
+    static final int REQUEST_IMAGE_CAPTURE = 2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +153,65 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             Log.e("error", result.getStatus().toString());
             handleSignInResult(result);
+        }
+        if (requestCode == REQUEST_GALLERY && resultCode == Activity.RESULT_OK) {
+            if (data == null) {
+                //Display an error
+                return;
+            }
+            try {
+                final InputStream inputStream = getContentResolver().openInputStream(data.getData());
+                //upload the input stream we get from user choice to firebase storage and saves the url to
+                // firebase object
+                final StorageReference storageRef = FirebaseStorage.getInstance()
+                        .getReferenceFromUrl("gs://petzy-1001.appspot.com");
+                final UploadTask uploadTask = storageRef.putStream(inputStream);
+                uploadTask.addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        final AppController appController = (AppController) getApplicationContext();
+                        appController.imageUrl = taskSnapshot.getDownloadUrl().toString();
+                    }
+                });
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            //Now you can do whatever you want with your inpustream, save it as file, upload to a server, decode a bitmap...
+        }
+        if (requestCode == REQUEST_GALLERY && resultCode == Activity.RESULT_OK) {
+            if (data == null) {
+                //Display an error
+                return;
+            }
+            try {
+                final InputStream inputStream = getContentResolver().openInputStream(data.getData());
+                //upload the input stream we get from user choice to firebase storage and saves the url to
+                // firebase object
+                final StorageReference storageRef = FirebaseStorage.getInstance()
+                        .getReferenceFromUrl("gs://petzy-1001.appspot.com");
+                final UploadTask uploadTask = storageRef.putStream(inputStream);
+                uploadTask.addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        final AppController appController = (AppController) getApplicationContext();
+                        appController.imageUrl = taskSnapshot.getDownloadUrl().toString();
+                    }
+                });
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void changeTabs(String[] tabNames, String[] tags) {
@@ -241,5 +317,19 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
             mGoogleApiClient.disconnect();
         }
         super.onStop();
+    }
+
+    //call the image gallery
+    public void pickImage() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, REQUEST_GALLERY);
+    }
+    //calls the camera
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
     }
 }
