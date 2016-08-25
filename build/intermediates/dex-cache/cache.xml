@@ -2,270 +2,284 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.0.0\jars\classes.jar"
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.4.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-impl-9.0.0_a6ec31141e20420cc8bf2f9b8d572599eebe79c4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0_c569f39e1eb973ec0f3c3bab78772691a9ddc76d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\okio-1.8.0_9af872c884477609003949934d6befe454a5c478.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="6f65c144283b31b4b9a70e6e7aa4c4a1c897d4b8">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-9.0.0_75ceb30a79fb2834224c0f82204567a959d87874.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="42df48c7305b08b14fa0e84561091b0c24d70d26">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-9.0.0_c7bc3d661128608227de0d22065af8efc6d6c6d3.jar" />
+        sha1="58c9f5ee817fdb8b658fd7455fadfb74119f7ee9">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-9.4.0_ccba68212c62b05228345c3963bee7c5915200ee\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_3f3b26a54d05b290687ceb3c6b9abfb5093e4b66.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.firebase\firebase-client-jvm\2.5.0\c0af904657634f7ab9cc21e75d80250570033321\firebase-client-jvm-2.5.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="c0af904657634f7ab9cc21e75d80250570033321">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\firebase-client-jvm-2.5.0_e76602c1bcc9bfc59c26287c4992b5c8f37988ed.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="cc178928721f3222b3b06bdfbd9497378ccb9792">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-9.0.0_e7585e80334f2f03507a73a1d2fb125648615235.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_3f3b26a54d05b290687ceb3c6b9abfb5093e4b66\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.1.0\693eddc23e87ab13f9cf5001707ce8e7e1d1ff01\adapter-rxjava-2.1.0.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="693eddc23e87ab13f9cf5001707ce8e7e1d1ff01">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.1.0_c4f09a56dcd06a70fec95aad8e1782c2415f39c1.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\adapter-rxjava-2.1.0_c4f09a56dcd06a70fec95aad8e1782c2415f39c1\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.0.0\jars\libs\internal_impl-23.0.0.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="5d4bccb885c8a89d066ecb6c4addb553a99a79a2">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0_2cad5721affc0883437e2d2e605c667051b8be8f.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_2cad5721affc0883437e2d2e605c667051b8be8f\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.2.2\3c8f6018eaa72d43b261181e801e6f8676c16ef6\jackson-databind-2.2.2.jar"
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jackson-databind-2.2.2_ac85d067b3e58db2eddf08551b5b8ef09252313a.jar" />
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.4.0_20d4182ae210b1cdb0dea74b9cbe965047c11ae7\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.2\f1bc476cc167b18e66c297df599b2377131a8947\gson-2.6.2.jar"
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.4.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\gson-2.6.2_80943a283de5e6e8beb864922e3812383213dd65.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.6\2586312cd2b8a511e4c6236736f5a039fc0f2273\rxjava-1.1.6.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\rxjava-1.1.6_ab19275f6331d79a3ef1011bee712e0cf5002a72.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.2.2\d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b\jackson-core-2.2.2.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jackson-core-2.2.2_8002f5747dadf5c02651d93db4ea23446e5a7c10.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\design\23.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="8a5238e4bdcd6568b82db669d41817de670586b8">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.0.0_42e41a9ad072754fab258da0f0e0ff31cea3ba85.jar" />
+        sha1="4b630471536351be7c3c3100735c75b7ad2cbd84">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-9.4.0_d33ac0adb77b5f954c7d84aa921680ffbb18bf1a\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.7.2\d7e275ba05aa380ca254f72d0c0ffebaedc3adcf\jsoup-1.7.2.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="d7e275ba05aa380ca254f72d0c0ffebaedc3adcf">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jsoup-1.7.2_9d00147b9c730bb56bf71b8d5b80ed5aa8c93482.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.2.2\285cb9c666f0f0f3dd8a1be04e1f457eb7b15113\jackson-annotations-2.2.2.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.2.2_c01f672a97fef7a753adee4feceb8fcdc6910c76.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\jsoup-1.7.2_9d00147b9c730bb56bf71b8d5b80ed5aa8c93482\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0_440b9ebc7ea60cdd261257ade67c17028c73c461.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_440b9ebc7ea60cdd261257ade67c17028c73c461\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.0.0\jars\classes.jar"
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.4.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="bb0ac3f3ee2d71854501cc28e52cc84a20209b41">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-v13-23.0.0_ef5dd1fa2ae9e43949ca7a314e438e9accf34b14.jar" />
+        sha1="34762013d39dbe6c656050589c44e8b61b9a2c5d">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-common-9.4.0_d670c43a724aa7f2fa7ce918c6aa4287c0caec2e\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.0.0\jars\classes.jar"
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\9.4.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-9.0.0_34b9e9fb3114f45008f2173bc030aa3359e1a025.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="7a23185c9b1c100e7d1a32275017e4712e31c796">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-auth-base-9.0.0_aaf67ed2a52c1dd33ddbb1c18de91282b36f07fb.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="a819aae4f0c711e50b4fd633922a3c1a176cb51e">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-9.0.0_15c4ec5f6990a0212244fe52645fabd96c432c3a.jar" />
+        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-9.4.0_022f1a68205a0fb64013c943ba9c5f47e3c3faae\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_6c732d20765e668e132f900eefeda5c26e18c096.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.firebase\firebase-client-android\2.5.0\7d0473896b3b10b23a2f9812fec4316dff8afdd\firebase-client-android-2.5.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="07d0473896b3b10b23a2f9812fec4316dff8afdd">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\firebase-client-android-2.5.0_a7a60158edea47310a889b5fd4283d032237e1b8.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-9.0.0_6f8de9c21fbe1d5f7ac22a2b29ef841d4953ef40.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\okhttp-3.3.0_0b8d2341b9ac71c85a9c00397775fc82a9ed6cec.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="59cca9b91688dc2467754d36793b3d23bebd21a9">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-9.0.0_ab614f7d4584e6f593248f1c28d36a5b0e3d814c.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.volley-volley-1.0.0_6c732d20765e668e132f900eefeda5c26e18c096\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\libs\Parse-1.9.4.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="56c22930b5d4f77015b6a40c7f14103d3e101001">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\Parse-1.9.4_9e9af531f97f56b6a82304a79ca0fdd2ecc08cbf.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.0_28db3468bf3b7bbd376856c8173c0ffe2a49f425.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="1941832901fc4e7a93300b53762e9f65d7650b99">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.0.0_503cc61cd128f406e3caf698de5779a80d7fd8a0.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\Parse-1.9.4_9e9af531f97f56b6a82304a79ca0fdd2ecc08cbf\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.2.1_5d73c85bca216e0a25a23001c6532938fc4fc585.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\io.reactivex-rxandroid-1.2.1_5d73c85bca216e0a25a23001c6532938fc4fc585\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4348dd26d83b56c2058b768222c3271bce911724">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-9.4.0_8323630554abae0a78b3135cfe1df48beefbfa31\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.2.0\a56f28d5b7fab623c6c1d2afa08dd496d873ac21\logging-interceptor-3.2.0.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.2.0_fd111a4caef3de4de0c15e9c04ce5851442f9d66.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.2.0_fd111a4caef3de4de0c15e9c04ce5851442f9d66\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="40bf3e56521c6b671c3ec7a48b6a9d5250a9cd8d">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\instant-run_cb25a5b59e5087cf5ce441e348285d322ee13155.jar" />
+        sha1="2c330626cbee6c860b83c7cef85c4c4acb23347d">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_cb25a5b59e5087cf5ce441e348285d322ee13155\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.4.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_fc7e755f768e2cfd380db259e9ecc7ac1ee10790.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="7da84426d876216ed4cdddd85e739be5ecabdd04">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-auth-9.0.0_9588187c6de8358074bb51da5a3c52bf8bd75e75.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.firebase\tubesock\0.0.12\6ec0bbd3e161a73ed672284b587fd32309a86d7a\tubesock-0.0.12.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="6ec0bbd3e161a73ed672284b587fd32309a86d7a">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\tubesock-0.0.12_a9ad0dfae4f44e2c6c9bd4c2d493731c4f84699b.jar" />
+        sha1="a440fb3fec30ff925e9f601cc458fb6671834cb2">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.4.0_c55544d7d15f15ebd097dd689199b5d2aa8c6b0f\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.0_7bf416ceb3a94e3cd1a89849d8d5f0338d02e008.jar" />
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.0.0_7bf416ceb3a94e3cd1a89849d8d5f0338d02e008\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0b060160e7daee343f5315b3da91b0ff2d7eed89">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-9.4.0_dc667554c00842bf6b8edbd01234f4f7bc53182b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c8f5d56f8f8a287c95e02c542baade138a378048">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-9.4.0_16c0dd629c1a78ca899204692fff30dee0611a6d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.0.0_c569f39e1eb973ec0f3c3bab78772691a9ddc76d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_9af872c884477609003949934d6befe454a5c478\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6bc41d9d6fd12d2ef23c785a259011001f4a1a5b">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-module-9.4.0_bbc15d0a222a69322cb7795d07a2ce76b798528e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.2\f1bc476cc167b18e66c297df599b2377131a8947\gson-2.6.2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.6.2_80943a283de5e6e8beb864922e3812383213dd65\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.6\2586312cd2b8a511e4c6236736f5a039fc0f2273\rxjava-1.1.6.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\rxjava-1.1.6_ab19275f6331d79a3ef1011bee712e0cf5002a72\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\design\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a5238e4bdcd6568b82db669d41817de670586b8">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.0.0_42e41a9ad072754fab258da0f0e0ff31cea3ba85\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="84bf369090a8f7e293817efbd6ccf31ada1be32b">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-9.4.0_b5b90c1642855cc52c861a3d8e57eb1962994053\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e454c414a069241ee08444d187f2dd3a702596b5">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-9.4.0_b1b5fdaff9a860e17e62f7c102d7aa99586cb88d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3b7173b3df4c7029699919414400041f64519e34">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-9.4.0_a2e3343e4d530fe00f6183d92b966d05904dbd8d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e35002351f2d415093a9b564652d4b56be6a0593">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-9.4.0_5c5952112af4e8bcf02e3c89ea5eb3f10917acdf\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="bb0ac3f3ee2d71854501cc28e52cc84a20209b41">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-23.0.0_ef5dd1fa2ae9e43949ca7a314e438e9accf34b14\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.3.0_0b8d2341b9ac71c85a9c00397775fc82a9ed6cec\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.4.0_04f77c4cd8f687a30575ca672a6e8e20d5a9f13d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="88848548ab56d4fbf3d2d1b0c85bf1ff9b4c1f4b">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-9.4.0_e4ce964816c851e4f4949708db6b914b1bfdb1e7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.0.0_28db3468bf3b7bbd376856c8173c0ffe2a49f425\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.2_fc7e755f768e2cfd380db259e9ecc7ac1ee10790\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.4.0_f056dea4563b836cd960e77509914624a58da024\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="98e97da89d4df8e2f6eba63498d3d46a587372f2">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-9.4.0_2653f16b1776eff738650ff3fc4d044025c8dff0\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.4.0_458d94971856105b1450ff768d1288c5994ce56a\classes.dex" />
     </item>
     <item
         jar="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="ad24148a0636b8189153c4db78342f44a84ee1c0">
-        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_ae8fb2c394527d632df57e165c4975a2ad4e803b.jar" />
+        sha1="6d9153a20e4a101bc5c27e5a4f5c3a5030f859f2">
+        <dex dex="C:\Users\Kristina\StudioProjects\PetzyAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_ae8fb2c394527d632df57e165c4975a2ad4e803b\classes.dex" />
     </item>
 
 </items>

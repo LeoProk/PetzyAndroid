@@ -1,9 +1,11 @@
 package tk.leopro.petzyandroid.main;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -39,7 +41,8 @@ final class SqlParksBuilder implements FactoryInterface {
     public Object doTask() {
         final ArrayList firebaseItems = new ArrayList<>();
         // Get a reference to firebase database
-        final Firebase ref = new Firebase("https://petzy-1001.firebaseio.com/input");
+        final DatabaseReference ref = FirebaseDatabase.getInstance()
+                .getReferenceFromUrl(("https://petzy-1001.firebaseio.com/input"));
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -52,9 +55,10 @@ final class SqlParksBuilder implements FactoryInterface {
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
         //mParksList.add(new Park(finalParks[0], linkStreetView(finalParks[2], finalParks[3], finalParks[4]), finalParks[1], finalParks[2], finalParks[3]));
 

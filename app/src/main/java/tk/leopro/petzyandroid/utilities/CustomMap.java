@@ -28,7 +28,7 @@ final class CustomMap implements FactoryInterface {
 
     @Override
     public Object doTask() {
-        final GoogleMap map = mMapView.getMap();
+     /*   final GoogleMap map = mMapView.getMap();
         map.getUiSettings().setMyLocationButtonEnabled(false);
         map.setMyLocationEnabled(true);
         map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
@@ -45,7 +45,7 @@ final class CustomMap implements FactoryInterface {
         } else {
             latLngLocation = new LatLng(31.7833, 35.2167);
         }
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLngLocation, 15));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLngLocation, 15));*/
         return null;
     }
 

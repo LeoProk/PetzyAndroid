@@ -1,6 +1,7 @@
 package tk.leopro.petzyandroid.main;
 
-import com.firebase.client.Firebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.pojo.FirebaseItem;
@@ -18,9 +19,10 @@ final class SaveNewPark implements FactoryInterface {
 
     @Override
     public Object doTask() {
-        Firebase myFirebaseRef = new Firebase("https://petzy-1001.firebaseio.com/");
-        Firebase postRef = myFirebaseRef.child("input");
-        Firebase newPostRef = postRef.push();
+        final DatabaseReference ref = FirebaseDatabase.getInstance()
+                .getReferenceFromUrl(("https://petzy-1001.firebaseio.com/input"));
+        final DatabaseReference postRef = ref.child("input");
+        final DatabaseReference newPostRef = postRef.push();
         newPostRef.setValue(mFirebaseItem);
         return null;
     }
