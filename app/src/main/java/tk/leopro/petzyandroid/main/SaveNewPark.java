@@ -20,7 +20,7 @@ final class SaveNewPark implements FactoryInterface {
     @Override
     public Object doTask() {
         final DatabaseReference ref = FirebaseDatabase.getInstance()
-                .getReferenceFromUrl(("https://petzy-1001.firebaseio.com/input"));
+                .getReferenceFromUrl(("https://petzy-1001.firebaseio.com/"));
         final DatabaseReference postRef = ref.child("input");
         final DatabaseReference newPostRef = postRef.push();
         newPostRef.setValue(mFirebaseItem);

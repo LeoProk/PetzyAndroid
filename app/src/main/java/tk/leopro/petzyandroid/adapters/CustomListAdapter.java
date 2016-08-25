@@ -22,7 +22,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -89,10 +88,10 @@ public class CustomListAdapter extends BaseAdapter {
         final TextView length = (TextView) convertView.findViewById(R.id.length);
         // getting item data for the row
         final FirebaseItem firebaseItem = mFirebaseItems.get(position);
-        thumbNail.setImageUrl(firebaseItem.thumbnailUrl(firebaseItem.getUser()), mImageLoader);
+        thumbNail.setImageUrl(firebaseItem.getThumbnail(firebaseItem.getUser()), mImageLoader);
         address.setText(firebaseItem.getAddress());
         title.setText(firebaseItem.getTitle());
-        length.setText(distanceInKM(firebaseItem.calculateDistance()));
+        length.setText(distanceInKM(firebaseItem.getDistance()));
         return convertView;
     }
     //return string distance in meter or kelometres

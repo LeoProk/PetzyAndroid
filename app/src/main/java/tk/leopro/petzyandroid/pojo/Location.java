@@ -6,46 +6,26 @@ import java.util.Map;
 
 public class Location {
 
-    private Double lat;
-    private Double lng;
+    private String lat;
+    private String lng;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
-     * 
+     *
      * @return
      *     The lat
      */
-    public Double getLat() {
+    public String getLat() {
         return lat;
     }
-
-    /**
-     * 
-     * @param lat
-     *     The lat
-     */
-    public void setLat(Double lat) {
-        this.lat = lat;
-    }
-
     /**
      * 
      * @return
      *     The lng
      */
-    public Double getLng() {
+    public String getLng() {
         return lng;
     }
-
-    /**
-     * 
-     * @param lng
-     *     The lng
-     */
-    public void setLng(Double lng) {
-        this.lng = lng;
-    }
-
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }

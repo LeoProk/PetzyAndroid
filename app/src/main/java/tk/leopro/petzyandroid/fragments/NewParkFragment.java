@@ -148,7 +148,7 @@ public class NewParkFragment extends Fragment {
                         //save to firebase after creating hashmap of the new items array list
                         FirebaseItem itemForSave = new FirebaseItem(mAddress.getText().toString()
                                 ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask()
-                                ,mChosenLocation ,appController.imageUrl);
+                                ,mChosenLocation ,appController.imageUrl,"user");
                         AppFactory.saveNewPark(itemForSave).doTask();
                         UtilitiesFactory.removeFragment(getActivity()).doTask();
                     }
