@@ -6,13 +6,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.parse.GetCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 
 import android.content.Context;
 import android.util.Log;
@@ -22,7 +15,6 @@ import java.util.Collections;
 
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.pojo.FirebaseItem;
-import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
 
 /**
  * Get the parks info from parse database and create new SQLite file.

@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+
 import java.util.ArrayList;
 
 import retrofit2.Retrofit;
@@ -55,7 +57,7 @@ public class NewParkFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_new_item, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_new_park, container, false);
         //get the application class
         final AppController appController = (AppController) getActivity().getApplicationContext();
         appController.imageUrl = "null";
@@ -65,6 +67,14 @@ public class NewParkFragment extends Fragment {
         //lang lat array of predictions
         final ArrayList<tk.leopro.petzyandroid.pojo.Location> predictedLocation = new ArrayList<>();
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1, new String[]{});
+        // let the user to input image for park on click
+        final ImageView userImage = (ImageView) rootView.findViewById(R.id.image);
+        userImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).pickImage();
+            }
+        });
         mAddress.setAdapter(arrayAdapter);
         mAddress.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -72,7 +82,6 @@ public class NewParkFragment extends Fragment {
                 mChosenLocation = predictedLocation.get(position);
             }
         });
-        ((MainActivity)getActivity()).pickImage();
         //get info from google place prediction using rxandroid and retrofit
         RxJavaCallAdapterFactory rxAdapter = RxJavaCallAdapterFactory.create();
         final Retrofit retrofit = new Retrofit.Builder()

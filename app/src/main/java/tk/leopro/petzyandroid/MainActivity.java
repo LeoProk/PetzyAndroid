@@ -52,6 +52,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -160,7 +162,8 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
                 return;
             }
             try {
-                final InputStream inputStream = getContentResolver().openInputStream(data.getData());
+                Log.e("YaY",data.getData().getPath());
+                final InputStream inputStream = new FileInputStream(new File(data.getData().getPath()));
                 //upload the input stream we get from user choice to firebase storage and saves the url to
                 // firebase object
                 final StorageReference storageRef = FirebaseStorage.getInstance()

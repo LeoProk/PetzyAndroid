@@ -27,13 +27,13 @@
     <string name="login">אנא התחבר על מנת להמשיך</string>
     <string-array name="titles">
         <item>הוסף פארק</item>
-<!--    <item>Lost Found</item>
+<!--        <item>Lost Found</item>
         <item>Tips</item>
         <item>Parks</item>
         <item>Veterinars</item>-->
     </string-array>
 
     <string-array name="icons">
-        <item>@drawable/ic_action_content_add_circle_outline</item>
+
     </string-array>
 </resources>

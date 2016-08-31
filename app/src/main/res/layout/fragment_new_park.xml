@@ -26,14 +26,23 @@
                 android:layout_marginTop="20dp"
                 android:hint="@string/address"
                 android:id="@+id/address"/>
-
+        <ImageView
+            android:layout_width="270dp"
+            android:layout_height="310dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:text="@string/accept"
+            android:src="@drawable/add_image"
+            android:layout_below="@id/address"
+            android:id="@+id/image"
+            />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:id="@+id/submit"
             android:text="פרסם"
-            android:layout_below="@+id/address" />
+            android:layout_below="@+id/image" />
 
 
     </RelativeLayout>
