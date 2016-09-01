@@ -57,6 +57,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import tk.leopro.petzyandroid.fragments.NewParkFragment;
 import tk.leopro.petzyandroid.fragments.ParksClosest;
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.main.AppFactory;
@@ -84,6 +85,8 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
     private GoogleSignInOptions mGso;
 
     private PopupWindow mLogInPopup;
+
+    private String mImagePath;
 
     private static final int RC_SIGN_IN = 1000;
 
@@ -156,64 +159,12 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
             Log.e("error", result.getStatus().toString());
             handleSignInResult(result);
         }
-        if (requestCode == REQUEST_GALLERY && resultCode == Activity.RESULT_OK) {
+        if (requestCode == REQUEST_GALLERY || requestCode == REQUEST_GALLERY && resultCode == Activity.RESULT_OK) {
             if (data == null) {
                 //Display an error
                 return;
-            }
-            try {
-                Log.e("YaY",data.getData().getPath());
-                final InputStream inputStream = new FileInputStream(new File(data.getData().getPath()));
-                //upload the input stream we get from user choice to firebase storage and saves the url to
-                // firebase object
-                final StorageReference storageRef = FirebaseStorage.getInstance()
-                        .getReferenceFromUrl("gs://petzy-1001.appspot.com");
-                final UploadTask uploadTask = storageRef.putStream(inputStream);
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });
-                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        final AppController appController = (AppController) getApplicationContext();
-                        appController.imageUrl = taskSnapshot.getDownloadUrl().toString();
-                    }
-                });
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            //Now you can do whatever you want with your inpustream, save it as file, upload to a server, decode a bitmap...
-        }
-        if (requestCode == REQUEST_GALLERY && resultCode == Activity.RESULT_OK) {
-            if (data == null) {
-                //Display an error
-                return;
-            }
-            try {
-                final InputStream inputStream = getContentResolver().openInputStream(data.getData());
-                //upload the input stream we get from user choice to firebase storage and saves the url to
-                // firebase object
-                final StorageReference storageRef = FirebaseStorage.getInstance()
-                        .getReferenceFromUrl("gs://petzy-1001.appspot.com");
-                final UploadTask uploadTask = storageRef.putStream(inputStream);
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });
-                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        final AppController appController = (AppController) getApplicationContext();
-                        appController.imageUrl = taskSnapshot.getDownloadUrl().toString();
-                    }
-                });
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+            }else {
+                mImagePath = data.getData().getPath();
             }
         }
     }
@@ -238,6 +189,7 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
             GoogleSignInAccount acct = result.getSignInAccount();
             UtilitiesFactory.saveFile(this, "user", acct.getId()).doTask();
             mLogInPopup.dismiss();
+            UtilitiesFactory.addFragment(this, new NewParkFragment(),"new", true).doTask();
             Log.e("TRY",acct.getId());
         } else {
             Log.e("TRY","error");
@@ -333,6 +285,32 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+    //upload the image to firebase database
+    public void uploadImage(){
+        try {
+            final InputStream inputStream = new FileInputStream(new File(mImagePath));
+            //upload the input stream we get from user choice to firebase storage and saves the url to
+            // firebase object
+            final StorageReference storageRef = FirebaseStorage.getInstance()
+                    .getReferenceFromUrl("gs://petzy-1001.appspot.com");
+            final UploadTask uploadTask = storageRef.putStream(inputStream);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                }
+            });
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    final AppController appController = (AppController) getApplicationContext();
+                    appController.imageUrl = taskSnapshot.getDownloadUrl().toString();
+                }
+            });
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }

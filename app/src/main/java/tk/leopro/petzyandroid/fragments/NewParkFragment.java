@@ -159,6 +159,10 @@ public class NewParkFragment extends Fragment {
                                 ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask()
                                 ,mChosenLocation ,appController.imageUrl,"user");
                         AppFactory.saveNewPark(itemForSave).doTask();
+                        //upload the image to firebase database
+                        MainActivity mainActivity = (MainActivity)getActivity();
+                        mainActivity.uploadImage();
+                        //remove fragment when done
                         UtilitiesFactory.removeFragment(getActivity()).doTask();
                     }
                 }

@@ -27,6 +27,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 
 import tk.leopro.petzyandroid.AppController;
 import tk.leopro.petzyandroid.MainActivity;
@@ -39,6 +40,7 @@ import tk.leopro.petzyandroid.fragments.NewParkFragment;
 import tk.leopro.petzyandroid.fragments.ParksClosest;
 import tk.leopro.petzyandroid.fragments.VetsClosest;
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
+import tk.leopro.petzyandroid.main.AppFactory;
 import tk.leopro.petzyandroid.pojo.RowItem;
 
 import java.util.ArrayList;
@@ -123,7 +125,10 @@ final class CustomDrawer implements FactoryInterface {
         switch (position) {
             case 0:
                 tag = "new";
-                fragment = new NewParkFragment();
+                MainActivity mainActivity = (MainActivity)mContext;
+                //connects google api
+                mainActivity.googleApiConnect();
+                mainActivity.googleLogInPopup();
                 break;
            /* case 0:
                 tag = "dog";
@@ -161,11 +166,13 @@ final class CustomDrawer implements FactoryInterface {
             ((MainActivity) mContext).changeTabs(tabName, tabTags);
         }
         //Change to clicked Fragment
-        if (((MainActivity) mContext).getFragmentManager().findFragmentByTag(tag) == null) {
-            appController.fragmentTag = tag;
-            UtilitiesFactory.addFragment(mContext, fragment, tag, true).doTask();
-        } else {
-            UtilitiesFactory.switchFragments(mContext, tag).doTask();
+        if(fragment!=null) {
+            if (((MainActivity) mContext).getFragmentManager().findFragmentByTag(tag) == null) {
+                appController.fragmentTag = tag;
+                UtilitiesFactory.addFragment(mContext, fragment, tag, true).doTask();
+            } else {
+                UtilitiesFactory.switchFragments(mContext, tag).doTask();
+            }
         }
         mDrawerLayout.closeDrawer(mDrawerList);
     }
