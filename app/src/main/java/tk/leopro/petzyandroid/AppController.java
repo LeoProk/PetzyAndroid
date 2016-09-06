@@ -19,12 +19,8 @@ public class AppController extends Application {
     public static final String TAG = AppController.class.getSimpleName();
     //fragment tag control
     public String fragmentTag;
-    //user uploaded image patch
-    public String imageUrl;
     //the current users location
     public static Location sCurrentLocation;
-    //the timestamp of selected date in new item fragment
-    public String timestamp;
     private static AppController sInstance;
 
     private RequestQueue mRequestQueue;

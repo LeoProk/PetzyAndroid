@@ -1,9 +1,18 @@
 package tk.leopro.petzyandroid.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +23,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import retrofit2.Retrofit;
@@ -53,6 +73,14 @@ public class NewParkFragment extends Fragment {
     private tk.leopro.petzyandroid.pojo.Location mChosenLocation;
     //subscribtion for google place prediction
     private Subscription mSubscription;
+    //patch to the user picked iamge location
+    private Uri mImagePath;
+    //imageview of user image input
+    private ImageView mImageView;
+    //request code for gallery intent
+    private static final int REQUEST_GALLERY = 1;
+    //request code for camera intent
+    static final int REQUEST_IMAGE_CAPTURE = 2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,7 +88,6 @@ public class NewParkFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_new_park, container, false);
         //get the application class
         final AppController appController = (AppController) getActivity().getApplicationContext();
-        appController.imageUrl = "null";
         //initializes views
         mTitle = (EditText) rootView.findViewById(R.id.title);
         mAddress  = (AutoCompleteTextView) rootView.findViewById(R.id.address);
@@ -68,11 +95,11 @@ public class NewParkFragment extends Fragment {
         final ArrayList<tk.leopro.petzyandroid.pojo.Location> predictedLocation = new ArrayList<>();
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1, new String[]{});
         // let the user to input image for park on click
-        final ImageView userImage = (ImageView) rootView.findViewById(R.id.image);
-        userImage.setOnClickListener(new View.OnClickListener() {
+        mImageView = (ImageView) rootView.findViewById(R.id.image);
+        mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).pickImage();
+                pickImage();
             }
         });
         mAddress.setAdapter(arrayAdapter);
@@ -153,21 +180,77 @@ public class NewParkFragment extends Fragment {
                     if (mAddress.getText().toString().isEmpty()) {
                         AppFactory.addressPopUp(mTitle, getActivity()).doTask();
                     } else {
-                        //change fragment
-                        //save to firebase after creating hashmap of the new items array list
-                        FirebaseItem itemForSave = new FirebaseItem(mAddress.getText().toString()
-                                ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask()
-                                ,mChosenLocation ,appController.imageUrl,"user");
-                        AppFactory.saveNewPark(itemForSave).doTask();
-                        //upload the image to firebase database
-                        MainActivity mainActivity = (MainActivity)getActivity();
-                        mainActivity.uploadImage();
-                        //remove fragment when done
-                        UtilitiesFactory.removeFragment(getActivity()).doTask();
+                        //upload image to database
+                        uploadImage();
                     }
                 }
             }
         });
         return rootView;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_GALLERY || requestCode == REQUEST_GALLERY  ) {
+            if (data == null) {
+                //Display an error
+                return;
+            }else {
+                try {
+                    InputStream inputStream =getActivity().getContentResolver().openInputStream(data.getData());
+                    mImageView.setImageBitmap(BitmapFactory.decodeStream(new BufferedInputStream(inputStream)));
+                    mImagePath = data.getData();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+    }
+
+    //call the image gallery
+    public void pickImage() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, REQUEST_GALLERY);
+    }
+    //calls the camera
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+    //upload the image to firebase database
+    public void uploadImage(){
+        try {
+            InputStream inputStream =getActivity().getContentResolver().openInputStream(mImagePath);
+            //upload the input stream we get from user choice to firebase storage and saves the url to
+            // firebase object
+            final StorageReference storageRef = FirebaseStorage.getInstance()
+                    .getReferenceFromUrl("gs://petzy-1001.appspot.com");
+            final UploadTask uploadTask = storageRef.putStream(inputStream);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.e("imageUpload error",e.toString());
+                }
+            });
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    final AppController appController = (AppController) getActivity().getApplicationContext();
+                    //save to firebase after creating hashmap of the new items array list
+                    FirebaseItem itemForSave = new FirebaseItem(mAddress.getText().toString()
+                            ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask()
+                            ,mChosenLocation ,taskSnapshot.getDownloadUrl().toString(),"user");
+                    AppFactory.saveNewPark(itemForSave).doTask();
+                    //remove fragment when done
+                    UtilitiesFactory.removeFragment(getActivity()).doTask();
+                }
+            });
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -124,12 +124,16 @@ final class CustomDrawer implements FactoryInterface {
         // set the search value for item list fragments
         switch (position) {
             case 0:
-                tag = "new";
-                MainActivity mainActivity = (MainActivity)mContext;
-                //connects google api
-                mainActivity.googleApiConnect();
-                mainActivity.googleLogInPopup();
-                break;
+                if (((String) UtilitiesFactory.getFile(mContext, "user").doTask()).isEmpty()) {
+                    MainActivity mainActivity = (MainActivity) mContext;
+                    //connects google api
+                    mainActivity.googleApiConnect();
+                    mainActivity.googleLogInPopup();
+                    break;
+                } else{
+                    fragment = new NewParkFragment();
+                    tag = "new";
+                }
            /* case 0:
                 tag = "dog";
                 fragment = new DogsAdopting();

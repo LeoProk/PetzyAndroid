@@ -28,19 +28,11 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.Places;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-
-import android.app.Activity;
+import com.google.firebase.auth.FirebaseAuth;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.location.Location;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -83,22 +75,19 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
     private GoogleApiClient mGoogleApiClient;
 
     private GoogleSignInOptions mGso;
-
+    //popup that promp user to log in
     private PopupWindow mLogInPopup;
-
-    private String mImagePath;
-
+    //google log in intent code
     private static final int RC_SIGN_IN = 1000;
+    //fire base auth instance
 
-    private static final int REQUEST_GALLERY = 1;
-
-    static final int REQUEST_IMAGE_CAPTURE = 2;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //create the toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         UtilitiesFactory.getToolbar(this, toolbar).doTask();
@@ -152,21 +141,13 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if(requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             Log.e("error", result.getStatus().toString());
             handleSignInResult(result);
         }
-        if (requestCode == REQUEST_GALLERY || requestCode == REQUEST_GALLERY && resultCode == Activity.RESULT_OK) {
-            if (data == null) {
-                //Display an error
-                return;
-            }else {
-                mImagePath = data.getData().getPath();
-            }
-        }
+
     }
     public void changeTabs(String[] tabNames, String[] tags) {
         UtilitiesFactory.createTabs(this, mTabLayout, tabNames, tags).doTask();
@@ -203,7 +184,6 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
         if (lastLocation != null) {
             AppController.sCurrentLocation = new Location(lastLocation);
         }
-        UtilitiesFactory.addFragment(this,new ParksClosest(),"news",true).doTask();
     }
     //check the current location
     private void getCurrentLocation(){
@@ -268,49 +248,10 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
 
     @Override
     protected void onStop() {
+        super.onStop();
         if( mGoogleApiClient != null && mGoogleApiClient.isConnected() ) {
             mGoogleApiClient.disconnect();
         }
-        super.onStop();
     }
 
-    //call the image gallery
-    public void pickImage() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-        startActivityForResult(intent, REQUEST_GALLERY);
-    }
-    //calls the camera
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-    //upload the image to firebase database
-    public void uploadImage(){
-        try {
-            final InputStream inputStream = new FileInputStream(new File(mImagePath));
-            //upload the input stream we get from user choice to firebase storage and saves the url to
-            // firebase object
-            final StorageReference storageRef = FirebaseStorage.getInstance()
-                    .getReferenceFromUrl("gs://petzy-1001.appspot.com");
-            final UploadTask uploadTask = storageRef.putStream(inputStream);
-            uploadTask.addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-
-                }
-            });
-            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    final AppController appController = (AppController) getApplicationContext();
-                    appController.imageUrl = taskSnapshot.getDownloadUrl().toString();
-                }
-            });
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 }
