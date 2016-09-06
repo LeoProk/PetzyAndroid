@@ -55,14 +55,14 @@ import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
 
 /**
  * this app create new item in firebase database with the folowing params
- * @subject picked from subject spinner cant be default
- * @date 2date taken from website to avoid wrong date on devices
- * @text input from the user about the item
- * @address autocompletet text view that uses google places prediction to show street
+ * subject : picked from subject spinner cant be default
+ * date : 2date taken from website to avoid wrong date on devices
+ * text : input from the user about the item
+ * address : autocompletet text view that uses google places prediction to show street
  * address to the user that he must chose from
- * @phone phone of the user
- * @title title for the item by user
- * @user
+ * phone : phone of the user
+ * title : title for the item by user
+ * user :
  */
 public class NewParkFragment extends Fragment {
 
@@ -155,7 +155,7 @@ public class NewParkFragment extends Fragment {
                             @Override
                             public void onNext(GooglePredictionData googlePredictionData) {
                                 predictedLocation.clear();
-                                ArrayList<String> temp = new ArrayList<String>();
+                                ArrayList<String> temp = new ArrayList<>();
                                 //loops true all the prediction
                                 for (int i = 0; i < googlePredictionData.getResults().size(); i++) {
                                     temp.add(googlePredictionData.getResults().get(i).getFormattedAddress());
@@ -194,7 +194,6 @@ public class NewParkFragment extends Fragment {
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_GALLERY || requestCode == REQUEST_GALLERY  ) {
             if (data == null) {
                 //Display an error
-                return;
             }else {
                 try {
                     InputStream inputStream =getActivity().getContentResolver().openInputStream(data.getData());
