@@ -28,11 +28,19 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.Places;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -43,6 +51,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -80,8 +89,13 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
     //google log in intent code
     private static final int RC_SIGN_IN = 1000;
     //fire base auth instance
-
-
+    private FirebaseAuth mAuth;
+    //firebase log in listenner
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    //check if user logged in to firebase
+    public boolean userFirebaseLogin;
+    //check if user picked address from address picked autocomplete
+    private boolean mAddressPicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,17 +114,31 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
         mTabLayout.setVisibility(View.GONE);
         //check if the user sign in to the app before
         mGso = null;
-        if(((String)UtilitiesFactory.getFile(this,"user").doTask()).isEmpty()) {
-            // Configure sign-in to request the user's ID, email address, and basic
-            // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-            mGso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestEmail()
-                    .requestProfile()
-                    .build();
-            // Build a GoogleApiClient with access to the Google Sign-In API location API and the
-            // options specified by gso.
-        }
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        mGso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+               .requestIdToken(getString(R.string.default_web_client_id))
+               .requestEmail()
+               .requestProfile()
+               .build();
+        // Build a GoogleApiClient with access to the Google Sign-In API location API and the
+        // options specified by gso.
         buildGoogleApi();
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    userFirebaseLogin = true;
+                } else {
+                    // User is signed out
+                    Log.e("nay1", "onAuthStateChanged:signed_out");
+                }
+                // ...
+            }
+        };
+
         UtilitiesFactory.addFragment(this,new ParksClosest(),"park",true).doTask();
         //AppFactory.buildSQLParksData(this).doTask();
     }
@@ -145,7 +173,10 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
         if(requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             Log.e("error", result.getStatus().toString());
+            GoogleSignInAccount account = result.getSignInAccount();
+            firebaseAuthWithGoogle(account);
             handleSignInResult(result);
+
         }
 
     }
@@ -171,7 +202,6 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
             UtilitiesFactory.saveFile(this, "user", acct.getId()).doTask();
             mLogInPopup.dismiss();
             UtilitiesFactory.addFragment(this, new NewParkFragment(),"new", true).doTask();
-            Log.e("TRY",acct.getId());
         } else {
             Log.e("TRY","error");
         }
@@ -242,8 +272,9 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
     @Override
     protected void onStart() {
         super.onStart();
-        if( mGoogleApiClient != null )
-            mGoogleApiClient.connect();
+        if( mGoogleApiClient != null ){
+            mGoogleApiClient.connect();}
+        mAuth.addAuthStateListener(mAuthListener);
     }
 
     @Override
@@ -252,6 +283,31 @@ public class MainActivity extends AppCompatActivity  implements OnConnectionFail
         if( mGoogleApiClient != null && mGoogleApiClient.isConnected() ) {
             mGoogleApiClient.disconnect();
         }
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+        Log.d("id", "firebaseAuthWithGoogle:" + acct.getId());
+
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.e("yay", "signInWithCredential:onComplete:" + task.isSuccessful());
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Log.e("yay", "signInWithCredential", task.getException());
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
 
 }

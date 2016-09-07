@@ -15,25 +15,26 @@
     <string name="other">Other</string>
     <string name="closest">Closest</string>
     <string name="map">Map</string>
+    <string name="save">שומר את הפארק...</string>
     <string name="address">כתובת</string>
     <string name="title">כותרת</string>
     <string name="wrong_title">שדה הכותרת הוא חובה.</string>
     <string name="wrong_address">שדה הכתובת הוא חובה.</string>
     <string name="wrong_phone">שדה המס טלפון הוא חובה.</string>
-    <string name="wrong_info">שדה פרטים הוא חובה.</string>
+    <string name="wrong_info">שדה תמונות הוא חובה.</string>
     <string name="wrong_subject">אנא בחר קטגוריה בבקשה</string>
     <string name="accept">אישור</string>
     <string name="cancel">ביטול</string>
     <string name="login">אנא התחבר על מנת להמשיך</string>
     <string-array name="titles">
         <item>הוסף פארק</item>
-<!--        <item>Lost Found</item>
-        <item>Tips</item>
-        <item>Parks</item>
-        <item>Veterinars</item>-->
+        <!--    <item>Lost Found</item>
+                <item>Tips</item>
+                <item>Parks</item>
+                <item>Veterinars</item>-->
     </string-array>
 
     <string-array name="icons">
-
+        <item>@drawable/ic_action_content_add_circle_outline</item>
     </string-array>
 </resources>

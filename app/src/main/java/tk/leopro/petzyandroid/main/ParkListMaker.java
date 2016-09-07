@@ -56,6 +56,7 @@ final class ParkListMaker implements FactoryInterface {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                parksList.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     parksList.add(postSnapshot.getValue(FirebaseItem.class));
                 }

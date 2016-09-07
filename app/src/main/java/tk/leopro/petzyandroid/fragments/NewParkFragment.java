@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -22,6 +23,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,6 +37,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.UUID;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -80,8 +83,13 @@ public class NewParkFragment extends Fragment {
     //request code for gallery intent
     private static final int REQUEST_GALLERY = 1;
     //request code for camera intent
-    static final int REQUEST_IMAGE_CAPTURE = 2;
-
+    private static final int REQUEST_IMAGE_CAPTURE = 2;
+    //check if user picked picture
+    private boolean mUserImage;
+    //check if user picked address
+    private boolean mUserAddress;
+    //popup displaing that the user park is saving
+    private PopupWindow mSavePopup;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -106,6 +114,7 @@ public class NewParkFragment extends Fragment {
         mAddress.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mUserAddress = true;
                 mChosenLocation = predictedLocation.get(position);
             }
         });
@@ -177,11 +186,17 @@ public class NewParkFragment extends Fragment {
                 if (mTitle.getText().toString().isEmpty()) {
                     AppFactory.titlePopUp(mTitle, getActivity()).doTask();
                 } else {
-                    if (mAddress.getText().toString().isEmpty()) {
+                    if (mAddress.getText().toString().isEmpty() && mUserAddress == false) {
                         AppFactory.addressPopUp(mTitle, getActivity()).doTask();
                     } else {
-                        //upload image to database
-                        uploadImage();
+                        if(mUserImage == false){
+                            AppFactory.infoPopUp(mTitle,getActivity()).doTask();
+                        }else {
+                            //calls loading popup
+                            mSavePopup =(PopupWindow) AppFactory.getLoadingPopup(getActivity(),mTitle,"save").doTask();
+                            //upload image to database
+                            uploadImage();
+                        }
                     }
                 }
             }
@@ -196,6 +211,7 @@ public class NewParkFragment extends Fragment {
                 //Display an error
             }else {
                 try {
+                    mUserImage = true;
                     InputStream inputStream =getActivity().getContentResolver().openInputStream(data.getData());
                     mImageView.setImageBitmap(BitmapFactory.decodeStream(new BufferedInputStream(inputStream)));
                     mImagePath = data.getData();
@@ -228,7 +244,9 @@ public class NewParkFragment extends Fragment {
             // firebase object
             final StorageReference storageRef = FirebaseStorage.getInstance()
                     .getReferenceFromUrl("gs://petzy-1001.appspot.com");
-            final UploadTask uploadTask = storageRef.putStream(inputStream);
+            StorageReference mountainsRef = storageRef.child(UUID.randomUUID().toString());
+
+            final UploadTask uploadTask = mountainsRef.putStream(inputStream);
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
@@ -238,12 +256,13 @@ public class NewParkFragment extends Fragment {
             uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    final AppController appController = (AppController) getActivity().getApplicationContext();
                     //save to firebase after creating hashmap of the new items array list
                     FirebaseItem itemForSave = new FirebaseItem(mAddress.getText().toString()
                             ,mTitle.getText().toString(),(String) UtilitiesFactory.getFile(getActivity(), "user").doTask()
                             ,mChosenLocation ,taskSnapshot.getDownloadUrl().toString(),"user");
                     AppFactory.saveNewPark(itemForSave).doTask();
+                    //remove wating for save popup
+                    mSavePopup.dismiss();
                     //remove fragment when done
                     UtilitiesFactory.removeFragment(getActivity()).doTask();
                 }

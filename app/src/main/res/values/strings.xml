@@ -15,12 +15,13 @@
     <string name="other">Other</string>
     <string name="closest">Closest</string>
     <string name="map">Map</string>
+    <string name="save">שומר את הפארק...</string>
     <string name="address">כתובת</string>
     <string name="title">כותרת</string>
     <string name="wrong_title">שדה הכותרת הוא חובה.</string>
     <string name="wrong_address">שדה הכתובת הוא חובה.</string>
     <string name="wrong_phone">שדה המס טלפון הוא חובה.</string>
-    <string name="wrong_info">שדה פרטים הוא חובה.</string>
+    <string name="wrong_info">שדה תמונות הוא חובה.</string>
     <string name="wrong_subject">אנא בחר קטגוריה בבקשה</string>
     <string name="accept">אישור</string>
     <string name="cancel">ביטול</string>

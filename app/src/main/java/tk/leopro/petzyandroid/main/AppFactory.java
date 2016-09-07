@@ -49,10 +49,6 @@ public class AppFactory {
     public static FactoryInterface infoPopUp(View view ,Context context) {
         return new PopUpGenerator(view,context,"info");
     }
-    // show pop up message when subject option is missing
-    public static FactoryInterface subjectPopUp(View view ,Context context) {
-        return new PopUpGenerator(view,context,"subject");
-    }
     //gets data from firebase server
     public static FactoryInterface getLogInPopup(View anchorView, Context context,FactoryInterface factoryInterface,
                                                  GoogleSignInOptions gso){
@@ -61,5 +57,9 @@ public class AppFactory {
     // create new fire base entry
     public static FactoryInterface saveNewPark(FirebaseItem newItem){
         return new SaveNewPark(newItem);
+    }
+    //Call the loading pop up.
+    public static FactoryInterface getLoadingPopup(Context context, View anchorView, String inputCondition) {
+        return new LoadingPopup(anchorView, context, inputCondition);
     }
 }
