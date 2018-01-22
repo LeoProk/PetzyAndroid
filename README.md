@@ -1,3 +1,4 @@
 # PetzyAndroid
 
-App that show near park from firebase database and have option to add new park
+Android native app that show dog parks around you 
+Using firebase to store and edit data in json format
