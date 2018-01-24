@@ -16,7 +16,7 @@ import tk.leopro.petzyandroid.R;
 import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 
 /**
- * hold the diffrent pop up for missing field in new item create fragment
+ * creates new popup for missing fields depends on the String inputConidtion
  */
 final class PopUpGenerator implements FactoryInterface {
 
@@ -28,6 +28,7 @@ final class PopUpGenerator implements FactoryInterface {
 
     private String mInputCondition;
 
+    //constractor for new popup
     public PopUpGenerator(View anchorView, Context context, String inputCondition) {
         mAnchorView = anchorView;
         mContext = context;
@@ -55,18 +56,23 @@ final class PopUpGenerator implements FactoryInterface {
         textView.setTypeface(null, Typeface.BOLD);
         //change load message bassed on input
         switch (mInputCondition) {
+            //pop up when the title is missing
             case "title":
                 textView.setText(mContext.getResources().getString(R.string.wrong_title));
                 break;
+            //pop up when the address is missing
             case "address":
                 textView.setText(mContext.getResources().getString(R.string.wrong_address));
                 break;
+            //pop up when the phone is missing
             case "phone":
                 textView.setText(mContext.getResources().getString(R.string.wrong_phone));
                 break;
+            //pop up when the image is missing
             case "info":
                 textView.setText(mContext.getResources().getString(R.string.wrong_info));
                 break;
+            //pop up when the category is missing
             case "subject":
                 textView.setText(mContext.getResources().getString(R.string.wrong_subject));
                 break;

@@ -15,7 +15,7 @@ import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
 
 /**
  * Used to show all the park on the map
- * Still under constaction
+ * Still not in use
  */
 final class ParkMapMaker implements FactoryInterface {
 

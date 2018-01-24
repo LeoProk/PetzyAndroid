@@ -26,6 +26,7 @@ import tk.leopro.petzyandroid.R;
 
 /**
  * Fragments  that saves inputted text and image in databse from pet adopting or found and lost
+ * still not used
  */
 public class AddLostFound extends Fragment {
     @Override

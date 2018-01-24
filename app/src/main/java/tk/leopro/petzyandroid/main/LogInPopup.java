@@ -41,6 +41,7 @@ final class LogInPopup implements FactoryInterface {
     public Object doTask() {
         // Sets the right layout to the view
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //create new pop up
         final View popupView = mInflater.inflate(R.layout.login_popup, null);
         final PopupWindow popupWindow = new PopupWindow(popupView,
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);

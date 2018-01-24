@@ -2,6 +2,7 @@ package tk.leopro.petzyandroid.pojo;
 
 /**
  * create new entery for list adapter
+ * still not in use
  */
 public class Pet {
 

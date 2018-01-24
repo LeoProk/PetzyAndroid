@@ -25,7 +25,7 @@ import android.view.ViewGroup;
 import tk.leopro.petzyandroid.R;
 
 /**
- * Created by Leo on 7/2/2015.
+ * still not used
  */
 public class AdoptionTips extends Fragment {
 

@@ -21,6 +21,7 @@ public class AppController extends Application {
     public String fragmentTag;
     //the current users location
     public static Location sCurrentLocation;
+    //the instance of application class
     private static AppController sInstance;
 
     private RequestQueue mRequestQueue;
