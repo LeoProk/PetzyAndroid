@@ -14,7 +14,8 @@ import tk.leopro.petzyandroid.pojo.FirebaseItem;
 import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
 
 /**
- * Created by Leo on 10/10/2015.
+ * Used to show all the park on the map
+ * Still under constaction
  */
 final class ParkMapMaker implements FactoryInterface {
 

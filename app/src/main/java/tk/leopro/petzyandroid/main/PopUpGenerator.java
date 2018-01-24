@@ -42,7 +42,9 @@ final class PopUpGenerator implements FactoryInterface {
         final AppController appController = (AppController) mContext.getApplicationContext();
         final PopupWindow popupWindow = new PopupWindow(popupView,
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        //text view of popup text text view
         final TextView textView = (TextView) popupView.findViewById(R.id.message);
+        //button that dismiss the pop up on click
         final Button submit = (Button) popupView.findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

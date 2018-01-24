@@ -34,10 +34,15 @@ import tk.leopro.petzyandroid.adapters.CustomListAdapter;
 import tk.leopro.petzyandroid.pojo.FirebaseItem;
 
 /**
- * Retrieve data from sql and put it in list view adapter
+ *
+ * retrieve data from firebase by urls
+ * sets listener to when new value is added cleans and remakes the adapter
+ * set the new adapter to list view
  */
 final class ParkListMaker implements FactoryInterface {
+    //context
     private Context mContext;
+    //list view of parks
     private ListView mListView;
 
     public ParkListMaker(Context context, ListView listView) {
@@ -48,18 +53,26 @@ final class ParkListMaker implements FactoryInterface {
 
     @Override
     public Object doTask() {
+        //create new array of firebase items (parks)
         final ArrayList<FirebaseItem> parksList = new ArrayList();
+        //gets the current context
         FragmentActivity activity = (FragmentActivity) mContext;
+        //create new custom adapter for list of parks
         final CustomListAdapter adapter = new CustomListAdapter(activity, parksList);
+        //get reference to firebase by url
         final DatabaseReference ref = FirebaseDatabase.getInstance()
                 .getReferenceFromUrl(("https://petzy-1001.firebaseio.com/input"));
+        //set listener to data changes
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                //clean the parklist to avoid doubplicate values
                 parksList.clear();
+                //loop trew the values to build new list
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     parksList.add(postSnapshot.getValue(FirebaseItem.class));
                 }
+                //set the updated list
                 Collections.sort(parksList);
                 mListView.setAdapter(adapter);
             }
