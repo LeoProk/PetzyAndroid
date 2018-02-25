@@ -47,21 +47,17 @@ class CustomListAdapter(private val mActivity: Activity, private val mFirebaseIt
 
 
     val count: Int
-        @Override
-        get() = mFirebaseItems.size()
+    get() = mFirebaseItems.size()
 
-    @Override
-    fun getItem(location: Int): Object {
+    override fun getItem(location: Int): Object {
         return mFirebaseItems.get(location)
     }
 
-    @Override
-    fun getItemId(position: Int): Long {
+    override fun getItemId(position: Int): Long {
         return position.toLong()
     }
 
-    @Override
-    fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var convertView = convertView
 
         if (mInflater == null)

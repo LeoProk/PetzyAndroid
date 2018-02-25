@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    buildToolsVersion '27.0.2'
 
     defaultConfig {
         applicationId "tk.leopro.petzyandroid"
@@ -44,8 +45,12 @@ dependencies {
     compile 'org.jsoup:jsoup:1.7.2'
     compile 'com.android.volley:volley:1.0.0'
     compile group: 'io.reactivex', name: 'rxandroid', version: '1.2.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 apply plugin: 'com.google.gms.google-services'
+repositories {
+    mavenCentral()
+}
 
 

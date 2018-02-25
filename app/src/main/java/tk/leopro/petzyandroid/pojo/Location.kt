@@ -16,7 +16,7 @@ class Location {
      * The lng
      */
     val lng: String? = null
-    val additionalProperties: Map<String, Object> = HashMap<String, Object>()
+    val additionalProperties: MutableMap<String, Object> = HashMap<String, Object>()
 
     fun setAdditionalProperty(name: String, value: Object) {
         this.additionalProperties.put(name, value)

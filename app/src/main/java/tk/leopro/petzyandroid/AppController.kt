@@ -22,7 +22,7 @@ class AppController : Application() {
 
     private var mImageLoader: ImageLoader? = null
 
-    val requestQueue: RequestQueue
+    val requestQueue: RequestQueue?
         get() {
             if (mRequestQueue == null) {
                 mRequestQueue = Volley.newRequestQueue(getApplicationContext())
@@ -37,11 +37,10 @@ class AppController : Application() {
                 mImageLoader = ImageLoader(this.mRequestQueue,
                         LruBitmapCache())
             }
-            return this.mImageLoader
+            return this.mImageLoader!!
         }
 
-    @Override
-    fun onCreate() {
+    override fun onCreate() {
         super.onCreate()
         //Firebase.setAndroidContext(this);
         instance = this
@@ -50,12 +49,12 @@ class AppController : Application() {
     fun <T> addToRequestQueue(req: Request<T>, tag: String) {
         // set the default tag if tag is empty
         req.setTag(if (TextUtils.isEmpty(tag)) TAG else tag)
-        requestQueue.add(req)
+        requestQueue!!.add(req)
     }
 
     fun <T> addToRequestQueue(req: Request<T>) {
         req.setTag(TAG)
-        requestQueue.add(req)
+        requestQueue!!.add(req)
     }
 
     fun cancelPendingRequests(tag: Object) {

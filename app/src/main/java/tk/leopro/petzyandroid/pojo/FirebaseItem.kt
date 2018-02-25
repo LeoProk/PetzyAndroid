@@ -8,22 +8,11 @@ import tk.leopro.petzyandroid.AppController
 /**
  * fire base helper object for saving and retriving data from the server
  */
-class FirebaseItem : Comparable {
+class FirebaseItem : Comparable<Any> {
 
     //make sure that our field names match the names of the properties
     // in the Firebase database
-    // address of the park
-    val address: String
-    //title of the park
-    val title: String
-    //use that sumbited the park
-    val user: String
-    //image of the park
-    val image: String
-    //x and y of camera view
-    val camera: String
-    //location of the the park
-    val location: Location
+
 
     //rounding the distance to park from current location and return it
     val distance: Int
@@ -53,8 +42,7 @@ class FirebaseItem : Comparable {
 
     //check the distance between the current location and the parks location
     // using getDistance() and return the final distance
-    @Override
-    operator fun compareTo(compare: Object): Int {
+    override fun compareTo(compare: Any): Int {
         val comparedPark = (compare as FirebaseItem).distance
         val distance = distance
         return distance - comparedPark

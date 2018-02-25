@@ -30,10 +30,8 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.places.Places
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 import android.content.Intent
@@ -93,8 +91,7 @@ class MainActivity : AppCompatActivity(), OnConnectionFailedListener, Connection
     //check if user picked address from address picked autocomplete
     private val mAddressPicked: Boolean = false
 
-    @Override
-    protected fun onCreate(savedInstanceState: Bundle) {
+    override fun onCreate(savedInstanceState: Bundle) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -140,15 +137,14 @@ class MainActivity : AppCompatActivity(), OnConnectionFailedListener, Connection
     }
 
 
-    @Override
-    protected fun onPostCreate(savedInstanceState: Bundle) {
+    override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         // Sync the toggle state after onRestoreInstanceState has occurred.
         mDrawerToggle!!.syncState()
     }
 
-    @Override
-    fun onConfigurationChanged(newConfig: Configuration) {
+
+    override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
         mDrawerToggle!!.onConfigurationChanged(newConfig)
     }
@@ -181,12 +177,10 @@ class MainActivity : AppCompatActivity(), OnConnectionFailedListener, Connection
         UtilitiesFactory.createTabs(this, mTabLayout, tabNames, tags).doTask()
     }
 
-    @Override
-    fun onConnectionSuspended(i: Int) {
+    override fun onConnectionSuspended(i: Int?) {
     }
 
-    @Override
-    fun onConnectionFailed(connectionResult: ConnectionResult) {
+    override fun onConnectionFailed(connectionResult: ConnectionResult?) {
     }
 
 
@@ -205,8 +199,7 @@ class MainActivity : AppCompatActivity(), OnConnectionFailedListener, Connection
         }
     }
 
-    @Override
-    fun onConnected(bundle: Bundle) {
+    override fun onConnected(bundle: Bundle?) {
         getCurrentLocation()
         val lastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient)
@@ -247,8 +240,7 @@ class MainActivity : AppCompatActivity(), OnConnectionFailedListener, Connection
         }
     }
 
-    @Override
-    fun doTask(): Object? {
+    override fun doTask(): Any? {
         val signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient)
         startActivityForResult(signInIntent, RC_SIGN_IN)
         return null
