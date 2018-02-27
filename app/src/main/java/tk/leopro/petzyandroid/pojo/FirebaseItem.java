@@ -25,7 +25,7 @@ public class FirebaseItem implements Comparable {
     //location of the the park
     private Location location;
 /*    //the distance of the item location and current location
-    private int mDistance;*/
+    private int mDistance */
 
     public FirebaseItem(){
         // empty default constructor, necessary for Firebase to be able to deserialize blog posts
