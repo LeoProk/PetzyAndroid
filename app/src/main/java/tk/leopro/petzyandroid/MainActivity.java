@@ -64,7 +64,7 @@ import tk.leopro.petzyandroid.interfaces.FactoryInterface;
 import tk.leopro.petzyandroid.main.AppFactory;
 import tk.leopro.petzyandroid.utilities.UtilitiesFactory;
 
-/**
+/**java version now outdated
  * Main class have navigator drawer and toolbar that it pass to fragment. And method to hide tabs or
  * to change tabs on click and names.
  */
