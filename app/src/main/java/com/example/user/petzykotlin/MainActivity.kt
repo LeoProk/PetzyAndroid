@@ -1,4 +1,4 @@
-package me.leoprok.petzykotlin
+package me.leoprok.petzyandroid
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
