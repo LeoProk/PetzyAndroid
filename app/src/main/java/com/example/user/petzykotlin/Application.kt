@@ -10,5 +10,17 @@ import android.app.Application
 import android.location.Location
 
 class AppController : Application() {
-    lateinit var cuurentLocation:Location
+    //current location of user
+    lateinit var currentLocation:Location
+    //tag used to id frags
+    lateinit var fragmentTag:String
+
+    override fun onCreate() {
+        super.onCreate()
+        getCurrentLocation()
+    }
+
+    private fun getCurrentLocation(){
+
+    }
 }
