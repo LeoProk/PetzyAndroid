@@ -1,6 +1,7 @@
 package com.example.user.petzykotlin.parks
 
 import android.content.Context
+import android.util.Log
 import android.widget.ListView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -35,9 +36,9 @@ class ParkMaker(val context:Context,val listView:ListView){
                     parksList.add(postSnapshot.value as Park)
                 }
             }
-
+            //called if listener failed
             override fun onCancelled(p0: DatabaseError?) {
-
+                Log.e("firebase error",p0.toString())
             }
         })
     }
