@@ -7,8 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.android.volley.toolbox.ImageLoader
+import me.leoprok.petzyandroid.Application
 import me.leoprok.petzyandroid.R
 import me.leoprok.petzyandroid.pojos.Park
+import com.android.volley.toolbox.NetworkImageView
+import android.widget.TextView
+
+
+
+
 
 /**
  * Created by user on 3/1/18.
@@ -44,10 +51,33 @@ class ParkListAdapter(var activity : Activity,var parkList : ArrayList<Park>): B
             view = convertView
         }
         if(imageLoader.equals(null)){
-            imageLoader = com.example.user.petzykotlin.Application.sInstance.
+            imageLoader = Application.sInstance.imageLoader()
         }
+        val thumbNail = view.findViewById(R.id.thumbnail) as NetworkImageView
+        val title = view.findViewById(R.id.title) as TextView
+        val address = view.findViewById(R.id.address) as TextView
+        val length = view.findViewById(R.id.length) as TextView
+        val park = parkList.get(position)
+        thumbNail.setImageUrl(park.thumbnail(park.user),imageLoader)
+        title.text = park.title
+        address.text = park.address
+        length.setText(distanceInKM(park.distance()))
+
+        // getting item data for the row
         return view
     }
 
+    //return string distance in meter or kelometres
+    private fun distanceInKM(parkDistance: Int): String {
+        var parkDistance = parkDistance
+        val range: String
+        if (parkDistance < 1000) {
+            range = "מטרים"
+        } else {
+            range = "קילומטרים"
+            parkDistance = parkDistance / 1000
+        }
+        return parkDistance.toString() + " " + range
+    }
 
 }

@@ -1,4 +1,5 @@
-package com.example.user.petzykotlin
+package me.leoprok.petzyandroid
+
 
 /**
  * Application class have volley rellated methods.
@@ -15,7 +16,7 @@ import com.android.volley.toolbox.Volley
 import com.example.user.petzykotlin.pojos.LruBitmapCache
 
 class Application : Application() {
-    val TAG =  com.example.user.petzykotlin.Application::class.simpleName
+    val TAG =  Application::class.simpleName
     //current location of user
     lateinit var currentLocation:Location
     //tag used to id frags
@@ -26,7 +27,8 @@ class Application : Application() {
     private lateinit var mImageLoader: ImageLoader
     //the instance of application class
     companion object {
-        lateinit var sInstance : Application
+        lateinit var sInstance : me.leoprok.petzyandroid
+        .Application
     }
     //get current location onCreate
     override fun onCreate() {
