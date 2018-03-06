@@ -16,6 +16,8 @@ import com.android.volley.toolbox.Volley
 import com.example.user.petzykotlin.pojos.LruBitmapCache
 
 class Application : Application() {
+    //tag of the current fragment
+    var fragTag = ""
     val TAG =  Application::class.simpleName
     //current location of user
     lateinit var currentLocation:Location
@@ -26,14 +28,14 @@ class Application : Application() {
     //load loader for volley
     private lateinit var mImageLoader: ImageLoader
     //the instance of application class
-    companion object {
-        lateinit var sInstance : me.leoprok.petzyandroid
-        .Application
-    }
+//    companion object {
+//        lateinit var sInstance : me.leoprok.petzyandroid
+//        .Application
+//    }
     //get current location onCreate
     override fun onCreate() {
         super.onCreate()
-        sInstance = this
+        //sInstance = this
         getCurrentLocation()
     }
     //checks if request null if yes makes new volley request
