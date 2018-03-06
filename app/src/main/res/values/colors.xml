@@ -3,4 +3,7 @@
     <color name="colorPrimary">#8DB600</color>
     <color name="colorPrimaryDark">#658300</color>
     <color name="colorAccent">#d9d9d9</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
 </resources>
