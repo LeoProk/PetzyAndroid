@@ -40,6 +40,8 @@ class ParkListAdapter(var activity : Activity,var parkList : ArrayList<Park>): B
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view : View
+        //gets application
+        val app = activity.applicationContext as Application
         if (inflater.equals(null)){
             inflater = activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         }
@@ -51,7 +53,7 @@ class ParkListAdapter(var activity : Activity,var parkList : ArrayList<Park>): B
             view = convertView
         }
         if(imageLoader.equals(null)){
-            imageLoader = Application.sInstance.imageLoader()
+            imageLoader = app.imageLoader()
         }
         val thumbNail = view.findViewById(R.id.thumbnail) as NetworkImageView
         val title = view.findViewById(R.id.title) as TextView
@@ -61,7 +63,7 @@ class ParkListAdapter(var activity : Activity,var parkList : ArrayList<Park>): B
         thumbNail.setImageUrl(park.thumbnail(park.user),imageLoader)
         title.text = park.title
         address.text = park.address
-        length.setText(distanceInKM(park.distance()))
+        length.text = distanceInKM(park.distance())
 
         // getting item data for the row
         return view

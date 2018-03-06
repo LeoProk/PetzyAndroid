@@ -21,11 +21,6 @@ class ParkMaker(val context:Context,val listView:ListView){
         //get reference to firebase by url
         val ref = FirebaseDatabase.getInstance()
                 .getReferenceFromUrl("https://petzy-1001.firebaseio.com/input")
-//        val valueListener = object :ValueEventListener{
-//            override fun onDataChange(p0: DataSnapshot?) {
-//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//            }
-//        }
         //set listener to data changes
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot : DataSnapshot?) {
