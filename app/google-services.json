@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "1059675246656",
+    "firebase_url": "https://petzy-1001.firebaseio.com",
+    "project_id": "petzy-1001",
+    "storage_bucket": "petzy-1001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059675246656:android:eed6ecabd5d0819e",
+        "android_client_info": {
+          "package_name": "tk.leopro.petzyandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059675246656-mii5s1j896dtl0r7eupdravv5uku3535.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tk.leopro.petzyandroid",
+            "certificate_hash": "0ce6c3b3a6ec4352ac7717c820316eb4fa356d93"
+          }
+        },
+        {
+          "client_id": "1059675246656-8det6t28bv2pfvu5h4jrgpakr06kathc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCjhuBLdwL3TJLmbRT11BjB54EqQH9JLA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059675246656-hpgqgq2nuta8r71pkk10e2rd7mqea2eb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "leoprok.me.PetzyIOS"
+              }
+            },
+            {
+              "client_id": "1059675246656-8det6t28bv2pfvu5h4jrgpakr06kathc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059675246656:android:82f1a4822a840a18",
+        "android_client_info": {
+          "package_name": "me.leoprok.petzyandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059675246656-5sa8gfcu01m0fihhkd9d05sj65a1i0v5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.leoprok.petzyandroid",
+            "certificate_hash": "4b90bf3d40b17a9186f26a21cf69b6c04d417656"
+          }
+        },
+        {
+          "client_id": "1059675246656-8det6t28bv2pfvu5h4jrgpakr06kathc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCjhuBLdwL3TJLmbRT11BjB54EqQH9JLA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059675246656-hpgqgq2nuta8r71pkk10e2rd7mqea2eb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "leoprok.me.PetzyIOS"
+              }
+            },
+            {
+              "client_id": "1059675246656-8det6t28bv2pfvu5h4jrgpakr06kathc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
