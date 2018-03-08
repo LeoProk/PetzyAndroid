@@ -26,7 +26,7 @@ class ParkMaker(val context:Context,val listView:ListView){
             override fun onDataChange(dataSnapshot : DataSnapshot?) {
                 //clean the parklist to avoid doubplicate values
                 parksList.clear()
-                //loop trew the values to build new list
+                //loop threw the values to build new list
                 for (postSnapshot in dataSnapshot!!.children){
                     parksList.add(postSnapshot.value as Park)
                 }

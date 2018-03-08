@@ -84,12 +84,15 @@ class ParkListAdapter(var activity : Activity,var parkList : ArrayList<Park>): B
     private fun distanceInKM(parkDistance: Int): String {
         var parkDistance = parkDistance
         val range: String
+        //if the distance is smaller then 1000 meter writes meters
+        //otherwise divied by 1000 and write kelometer
         if (parkDistance < 1000) {
             range = "מטרים"
         } else {
             range = "קילומטרים"
             parkDistance = parkDistance / 1000
         }
+        //return the range and meters or kms
         return parkDistance.toString() + " " + range
     }
 

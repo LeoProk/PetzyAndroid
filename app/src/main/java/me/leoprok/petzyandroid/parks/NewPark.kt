@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 
 /**
- * Created by user on 3/7/18.
+ * fragment for new park that create new input in firebase
  */
 class NewPark: Fragment() {
 

@@ -42,8 +42,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //create new park list fragment
         FragmentMaker(this,ParkList(),"park_list",true)
     }
-
+    //on back button pressed
     override fun onBackPressed() {
+        //if the drawer open on back click close it else go back
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
@@ -89,16 +90,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
         }
-
+        //close drawer
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
-
+    //once map fragment loads show park markers
     override fun onMapReady(map: GoogleMap) {
+        //check for location permision if true set the map camera to current location
         if (ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED){
             map.isMyLocationEnabled = true
         }else{
+            //if false set the map to tell aviv latlng
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(32.109333, 34.855499), 13F))
         }
         map.addMarker(MarkerOptions().title("").snippet(""))
