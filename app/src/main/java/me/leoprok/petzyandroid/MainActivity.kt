@@ -18,8 +18,10 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import me.leoprok.petzyandroid.parks.NewPark
 import me.leoprok.petzyandroid.parks.ParkList
 import me.leoprok.petzyandroid.util.FragmentMaker
+import me.leoprok.petzyandroid.util.FragmentSwitcher
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,OnMapReadyCallback {
 
@@ -71,8 +73,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
+            //adds new park fragment
+            R.id.new_park -> {
+               FragmentMaker(this,NewPark(),"new_park",true)
             }
             R.id.nav_gallery -> {
 

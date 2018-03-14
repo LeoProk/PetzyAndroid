@@ -18,7 +18,8 @@ import me.leoprok.petzyandroid.pojos.LruBitmapCache
 class Application : Application() {
     //tag of the current fragment
     var fragTag = ""
-    val TAG =  Application::class.simpleName
+    //val TAG =  Application::class.simpleName
+    val TAG = "try"
     //current location of user
     lateinit var currentLocation:Location
     //tag used to id frags

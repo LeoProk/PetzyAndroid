@@ -5,6 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="parks">פרקי כלבים</string>
+    <string name="parks_map">מפת הפרקים</string>
+    <string name="new_park">הוסף פרק</string>
     <string name="save">שומר את הפארק...</string>
     <string name="address">כתובת</string>
     <string name="title">כותרת</string>

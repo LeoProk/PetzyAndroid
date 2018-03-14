@@ -28,7 +28,8 @@ class ParkMaker(val context:Context,val listView:ListView){
                 parksList.clear()
                 //loop threw the values to build new list
                 for (postSnapshot in dataSnapshot!!.children){
-                    parksList.add(postSnapshot.value as Park)
+                    Log.e("try",postSnapshot.value.toString())
+                   // parksList.add(postSnapshot.value as Park)
                 }
             }
             //called if listener failed
