@@ -22,6 +22,9 @@ import me.leoprok.petzyandroid.parks.NewPark
 import me.leoprok.petzyandroid.parks.ParkList
 import me.leoprok.petzyandroid.util.FragmentMaker
 import me.leoprok.petzyandroid.util.FragmentSwitcher
+import com.google.android.gms.maps.MapFragment
+
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,OnMapReadyCallback {
 
@@ -77,11 +80,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.new_park -> {
                FragmentMaker(this,NewPark(),"new_park",true)
             }
-            R.id.nav_gallery -> {
-
-            }
-            R.id.nav_slideshow -> {
-
+            R.id.parks_map -> {
+                
             }
             R.id.nav_manage -> {
 
